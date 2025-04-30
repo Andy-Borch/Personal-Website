@@ -62,7 +62,7 @@ export default function PersonalWebsite() {
         {/* Header Section with navigation links */}
         <header className="fixed w-full bg-slate-900 shadow-md z-10 top-0 left-0 transition-all duration-300">
           <nav className="flex justify-between items-center p-4 max-w-5xl mx-auto">
-            <h1 className="text-2xl font-bold text-teal-400 hover:text-teal-300 transition-colors duration-300">[Your Name]</h1>
+            <h1 className="text-2xl font-bold text-teal-400 hover:text-teal-200 transition-colors duration-300">Andy Borch</h1>
             <ul className="flex space-x-6">
               <li>
                 <a
@@ -134,13 +134,13 @@ export default function PersonalWebsite() {
 {/* Home Section */}
 <motion.section
   id="home"
-  className="min-h-screen flex items-center justify-center p-8 bg-slate-600 text-gray-100"
+  className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-100"
 >
   <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     {/* Text Content Section */}
     <div className="text-center md:text-left">
-      <h1 className="text-5xl font-extrabold text-slate-200 mb-4">Hi, I'm [Your Name]</h1>
-      <p className="text-2xl text-gray-300 mb-6">Computer Science | HPC | Research Enthusiast</p>
+      <h1 className="text-5xl font-extrabold text-slate-200 mb-4">Welcome! I'm Andy</h1>
+      <p className="text-2xl text-gray-300 mb-6">High Performance Computing | Scientific Computing | Quantum Computing</p>
       {/* You can add more content or buttons here if needed */}
     </div>
 
@@ -186,8 +186,8 @@ export default function PersonalWebsite() {
 
     {/* Text Content */}
     <div className="text-left rounded-lg shadow-xl p-8 bg-slate-800"> {/* Updated bubble style */}
-      <h2 className="text-3xl font-semibold text-slate-300 mb-4">About Me</h2> {/* Updated text color */}
-      <h3 className="text-xl font-semibold mb-2 text-teal-300">Software Developer with a Passion for Innovation</h3> {/* Updated accent color */}
+      <h2 className="text-3xl font-semibold text-gray-300 mb-4">About Me</h2> {/* Updated text color */}
+      <h3 className="text-xl font-semibold mb-2 text-teal-200">Computer Science Student Focused on HPC</h3> {/* Updated accent color */}
       <p className="text-lg mb-4">
         I'm Great.
       </p>
@@ -195,17 +195,17 @@ export default function PersonalWebsite() {
         I do cool stuff
       </p>
       <div className="mb-4">
-        <h4 className="text-lg font-semibold mb-2 text-indigo-300">Technical Skills</h4> {/* Updated accent color */}
+        <h4 className="text-lg font-semibold mb-2 text-yellow-300">Technical Skills</h4> {/* Updated accent color */}
         <div className="flex flex-wrap gap-2">
-          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">JavaScript</span> {/* Updated tag style */}
-          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">React</span>
-          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Node.js</span>
+          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">C++</span> {/* Updated tag style */}
           <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
+          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Machine Learning</span>
+          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">HPC Tools</span>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <h4 className="text-lg font-semibold mb-2 text-yellow-300">Problem Solver</h4> {/* Updated accent color */}
+          <h4 className="text-lg font-semibold mb-2 text-purple-300">Problem Solver</h4> {/* Updated accent color */}
           <p className="text-md">I enjoy tackling complex challenges and finding elegant solutions.</p>
         </div>
         <div>
@@ -223,18 +223,18 @@ export default function PersonalWebsite() {
   className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300"
 >
   <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start"> {/* Updated grid and gap */}
-    <h2 className="text-3xl font-semibold text-slate-300 mb-8 text-center underline col-span-full">
+    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">
       Work Experience
     </h2>
     {/* Experience 1 */}
     <div className="relative rounded-lg shadow-xl p-8 bg-slate-800"> {/* Updated bubble style */}
       <div className="flex justify-between items-center mb-2">
-        <h4 className="text-xl font-semibold text-teal-300">Job 1</h4> {/* Updated job title style */}
+        <h4 className="text-xl font-semibold text-teal-200">Job 1</h4> {/* Updated job title style */}
         <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">
           2022 - Present
         </div>
       </div>
-      <h3 className="text-xl font-semibold text-indigo-400 mb-4">Awesome Software Inc.</h3> {/* Updated company style */}
+      <h3 className="text-xl font-lg text-indigo-400 mb-4">Awesome Software Inc.</h3> {/* Updated company style */}
       <ul className="text-lg mb-4 list-disc pl-5 text-left">
         <li>Great at what I do.</li>
         <li>I build innovative solutions.</li>
@@ -255,23 +255,23 @@ export default function PersonalWebsite() {
     {/* Experience 2 */}
     <div className="relative rounded-lg shadow-xl p-8 bg-slate-800"> {/* Updated bubble style */}
       <div className="flex justify-between items-center mb-2">
-        <h4 className="text-xl font-semibold text-teal-300">Job 1</h4> {/* Updated job title style */}
+        <h4 className="text-xl font-semibold text-teal-200">HPC Research Assistant</h4> {/* Updated job title style */}
         <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">
-          2022 - Present
+          Summer 2024
         </div>
       </div>
-      <h3 className="text-xl font-semibold text-indigo-400 mb-4">Awesome Software Inc.</h3> {/* Updated company style */}
+      <h3 className="text-xl font-lg text-green-500 mb-4">Colorado State University</h3> {/* Updated company style */}
       <ul className="text-lg mb-4 list-disc pl-5 text-left">
         <li>Great at what I do.</li>
         <li>I build innovative solutions.</li>
       </ul>
       <div className="mb-4">
-        <h4 className="text-lg font-semibold text-yellow-300 mb-2">Technical Skills</h4> {/* Updated skills header style */}
+        <h4 className="text-lg font-semibold text-yellow-300 mb-2">Tools Used</h4> {/* Updated skills header style */}
         <div className="flex flex-wrap gap-2">
-          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">JavaScript</span> {/* Updated tag style */}
-          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">React</span>
-          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Node.js</span>
+          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">NVIDIA Jetson Nano</span> {/* Updated tag style */}
+          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Tensorflow</span>
           <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
+          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Benchmarking Tools</span>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
@@ -283,31 +283,31 @@ export default function PersonalWebsite() {
 {/* Projects Section */}
 <motion.section
   id="projects"
-  className="min-h-screen flex items-center justify-center p-8 bg-slate-800 text-gray-200"
+  className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300"
 >
   <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch"> {/* Different grid layout */}
-    <h2 className="text-3xl font-semibold text-slate-200 mb-8 text-center underline col-span-full">
-      My Featured Projects
+    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">
+      Featured Projects
     </h2>
     {/* Project 1 */}
-    <div className="relative rounded-lg shadow-lg p-6 bg-slate-700 flex flex-col"> {/* Different bubble style */}
+    <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col"> {/* Different bubble style */}
       <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
-        <img src="https://via.placeholder.com/640x360" alt="Project 1" className="object-cover w-full h-full" /> {/* Placeholder image */}
+        <img src="https://via.placeholder.com/640x360" alt="Project 1 (Image will go here)" className="object-cover w-full h-full" /> {/* Placeholder image */}
       </div>
-      <h3 className="text-xl font-semibold mb-2">Personal Portfolio Website</h3>
-      <p className="text-md mb-4">A responsive website showcasing my skills and projects.</p>
+      <h3 className="text-xl font-semibold mb-2">Fastest Algorithm Prediction</h3>
+      <p className="text-md mb-4">A machine learning program that predicts the fastest sorting algorithm based on certain features.</p>
       <div className="flex flex-wrap gap-2 mb-4">
-        <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">React</span>
-        <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Tailwind CSS</span>
-        <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Framer Motion</span>
+        <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
+        <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Numpy</span>
+        <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Data Generation/Manipulation</span>
       </div>
-      <a href="#" className="text-indigo-400 hover:underline mt-auto">View Live</a>
+      <a href="#" className="text-indigo-400 hover:underline mt-auto">View Code</a>
     </div>
 
     {/* Project 2 */}
-    <div className="relative rounded-lg shadow-lg p-6 bg-slate-700 flex flex-col"> {/* Different bubble style */}
+    <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col"> {/* Different bubble style */}
       <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
-        <img src="https://via.placeholder.com/640x360/4A5568" alt="Project 2" className="object-cover w-full h-full" /> {/* Different placeholder */}
+        <img src="https://via.placeholder.com/640x360/4A5568" alt="Project 2 put image here" className="object-cover w-full h-full" /> {/* Different placeholder */}
       </div>
       <h3 className="text-xl font-semibold mb-2">Task Management Application</h3>
       <p className="text-md mb-4">A web application for creating, organizing, and managing tasks.</p>
@@ -319,9 +319,9 @@ export default function PersonalWebsite() {
     </div>
 
     {/* Project 3 */}
-    <div className="relative rounded-lg shadow-lg p-6 bg-slate-700 flex flex-col"> {/* Different bubble style */}
+    <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col"> {/* Different bubble style */}
       <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
-        <img src="https://via.placeholder.com/640x360/718096" alt="Project 3" className="object-cover w-full h-full" /> {/* Another placeholder */}
+        <img src="https://via.placeholder.com/640x360/718096" alt="Project 3 Put image here" className="object-cover w-full h-full" /> {/* Another placeholder */}
       </div>
       <h3 className="text-xl font-semibold mb-2">Data Visualization Dashboard</h3>
       <p className="text-md mb-4">A dashboard to display and analyze sample datasets.</p>
@@ -341,8 +341,8 @@ export default function PersonalWebsite() {
   className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300" 
 >
   <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"> {/* Increased gap */}
-    <h2 className="text-3xl font-semibold text-slate-300 mb-8 text-center underline col-span-full">
-      My Academic Background
+    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">
+      Academic Background
     </h2>
     {/* Education 1 */}
     <div className="relative rounded-lg shadow-xl p-8 bg-slate-800"> {/* Different bubble style */}
@@ -350,13 +350,12 @@ export default function PersonalWebsite() {
         BS
       </div>
       <h3 className="text-xl font-semibold mb-2">Computer Science</h3>
-      <h4 className="text-lg text-indigo-300 mb-2">University of Techville</h4> {/* Different accent color */}
-      <p className="text-md mb-4">Graduated with honors, focused on software engineering and algorithms.</p>
+      <h4 className="text-lg text-green-500 mb-2">Colorado State University</h4> {/* Different accent color */}
+      <p className="text-md mb-4">Focused on software engineering and HPC areas.</p>
       <ul className="list-disc pl-5 text-left">
-        <li>Relevant coursework: Data Structures, Algorithms, Operating Systems.</li>
-        <li>Minor in Mathematics.</li>
+        <li>Relevant coursework: Data Structures, Algorithms, Operating Systems, Machine Learning</li>
       </ul>
-      <div className="absolute bottom-4 right-4 text-sm text-gray-400">2016 - 2020</div> {/* Different date position */}
+      <div className="absolute bottom-4 right-4 text-sm text-gray-400">2021 - 2025</div> {/* Different date position */}
     </div>
 
     {/* Education 2 */}
@@ -379,10 +378,10 @@ export default function PersonalWebsite() {
 {/* Supercomputing Experience */}
 <motion.section
   id="supercomputing"
-  className="min-h-screen flex items-center justify-center p-8 bg-slate-900 text-gray-400"
+  className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300"
 >
   <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"> {/* Different grid for potential image/text layout */}
-    <h2 className="text-3xl font-semibold text-slate-300 mb-8 text-center underline col-span-full">
+    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">
       My Adventures in Supercomputing
     </h2>
     <div className="rounded-lg shadow-xl p-8 bg-slate-800">
@@ -395,10 +394,10 @@ export default function PersonalWebsite() {
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> {/* Grid for images */}
       <div className="aspect-w-16 aspect-h-9 rounded-md overflow-hidden shadow-md">
-        <img src="https://via.placeholder.com/640x360/2E3748" alt="Supercomputer 1" className="object-cover w-full h-full" /> {/* Placeholder image */}
+        <img src="https://via.placeholder.com/640x360/2E3748" alt="Supercomputer 1 Image " className="object-cover w-full h-full" /> {/* Placeholder image */}
       </div>
       <div className="aspect-w-16 aspect-h-9 rounded-md overflow-hidden shadow-md">
-        <img src="https://via.placeholder.com/640x360/4A5568" alt="Supercomputer 2" className="object-cover w-full h-full" /> {/* Placeholder image */}
+        <img src="https://via.placeholder.com/640x360/4A5568" alt="Supercomputer 2 Image" className="object-cover w-full h-full" /> {/* Placeholder image */}
       </div>
       {/* You can add more image containers here */}
     </div>
@@ -408,42 +407,42 @@ export default function PersonalWebsite() {
 {/* Hobbies Section */}
 <motion.section
   id="hobbies"
-  className="min-h-screen flex items-center justify-center p-8 bg-slate-500 text-gray-700"
+  className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300"
 >
   <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-    <h2 className="text-3xl font-semibold text-slate-600 mb-8 text-center underline col-span-full">
+    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">
       What I Do When Not Coding
     </h2>
     <div className="rounded-lg shadow-md overflow-hidden">
-      <img src="https://via.placeholder.com/400x300/A0B4BF" alt="Photography" className="object-cover w-full h-full" />
+      <img src="https://via.placeholder.com/400x300/A0B4BF" alt="Photography Image" className="object-cover w-full h-full" />
       <div className="p-4 bg-slate-100">
         <h3 className="text-xl font-semibold mb-2 text-slate-700">Photography</h3>
         <p className="text-md text-gray-600">Capturing moments and exploring different perspectives through the lens.</p>
       </div>
     </div>
     <div className="rounded-lg shadow-md overflow-hidden">
-      <img src="https://via.placeholder.com/300x400/8F9BA8" alt="Hiking & Outdoors" className="object-cover w-full h-full" />
+      <img src="https://via.placeholder.com/300x400/8F9BA8" alt="Hiking & Outdoors Image" className="object-cover w-full h-full" />
       <div className="p-4 bg-slate-100">
         <h3 className="text-xl font-semibold mb-2 text-slate-700">Hiking & Outdoors</h3>
         <p className="text-md text-gray-600">Exploring trails, enjoying nature, and getting some fresh air.</p>
       </div>
     </div>
     <div className="rounded-lg shadow-md overflow-hidden lg:col-span-1">
-      <img src="https://via.placeholder.com/600x200/778899" alt="Playing Guitar" className="object-cover w-full h-full" />
+      <img src="https://via.placeholder.com/600x200/778899" alt="Playing Guitar Image" className="object-cover w-full h-full" />
       <div className="p-4 bg-slate-100">
         <h3 className="text-xl font-semibold mb-2 text-slate-700">Playing Guitar</h3>
         <p className="text-md text-gray-600">Strumming chords and making some noise (hopefully good noise!).</p>
       </div>
     </div>
     <div className="rounded-lg shadow-md overflow-hidden">
-      <img src="https://via.placeholder.com/350x350/B0C4DE" alt="Reading Sci-Fi" className="object-cover w-full h-full" />
+      <img src="https://via.placeholder.com/350x350/B0C4DE" alt="Reading Sci-Fi Image" className="object-cover w-full h-full" />
       <div className="p-4 bg-slate-100">
         <h3 className="text-xl font-semibold mb-2 text-slate-700">Reading Sci-Fi</h3>
         <p className="text-md text-gray-600">Getting lost in other worlds and exploring futuristic ideas.</p>
       </div>
     </div>
     <div className="rounded-lg shadow-md overflow-hidden">
-      <img src="https://via.placeholder.com/450x250/D3D3D3" alt="Learning New Things" className="object-cover w-full h-full" />
+      <img src="https://via.placeholder.com/450x250/D3D3D3" alt="Learning New Things Image" className="object-cover w-full h-full" />
       <div className="p-4 bg-slate-100">
         <h3 className="text-xl font-semibold mb-2 text-slate-700">Learning New Things</h3>
         <p className="text-md text-gray-600">Always eager to expand my knowledge and pick up new skills.</p>
@@ -454,7 +453,7 @@ export default function PersonalWebsite() {
 
 {/* Footer Section */}
 <footer className="p-6 bg-slate-800 text-gray-300 text-center">
-  <p>&copy; 2025 [Your Name] | All rights reserved</p>
+  <p>&copy; 2025 Anderson Borch | All rights reserved</p>
   <div className="flex justify-center space-x-6 mt-4">
     <a
       href="https://github.com/yourusername"
