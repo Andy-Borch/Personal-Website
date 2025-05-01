@@ -99,7 +99,7 @@ export default function PersonalWebsite() {
         {/* Header Section with navigation links (Keep as is) */}
         <header className="fixed w-full bg-slate-900 shadow-md z-10 top-0 left-0 transition-all duration-300">
           <nav className="flex justify-between items-center p-4 max-w-5xl mx-auto">
-            <h1 className="text-2xl font-bold text-teal-400 hover:text-teal-200 transition-colors duration-300">Andy Borch</h1>
+            <h1 className="text-2xl font-bold text-teal-200 hover:text-teal-400 transition-colors duration-300">Andy Borch</h1>
             <ul className="flex space-x-6">
                {/* Navigation Links - No change needed here */}
                 <li><a href="#home" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Home<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
@@ -126,15 +126,15 @@ export default function PersonalWebsite() {
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Text Content Section */}
             <div className="text-center md:text-left">
-              <h1 className="text-5xl font-extrabold text-slate-200 mb-4">Welcome! I'm Andy</h1>
+              <h1 className="text-5xl font-extrabold text-slate-200 mb-4">Welcome!</h1>
               <p className="text-2xl text-gray-300 mb-6">High Performance Computing | Scientific Computing | Quantum Computing</p>
             </div>
             {/* Image/Icon Section */}
             <div className="flex justify-center">
               <img
-                src="/logo512.png-tech.png"
+                src="/SC.png"
                 alt="Profile"
-                className="w-48 h-48 rounded-full shadow-md border-4 border-blue-500 hover:scale-105 transition-transform"
+                className="w-45 h-45 rounded-full shadow-md border-4 border-blue-500 hover:scale-105 transition-transform"
               />
             </div>
           </div>
@@ -151,19 +151,12 @@ export default function PersonalWebsite() {
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
              {/* Image/Icon Section */}
               <div className="flex justify-center">
-                <div className="relative w-48 h-48 bg-slate-800 rounded-full flex items-center justify-center shadow-xl">
-                   {/* ... existing icon elements ... */}
-                    <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-indigo-400 text-xl">{"</>"}</div>
-                    <div className="absolute bottom-1/4 left-1/4 transform -translate-x-1/2 translate-y-1/2 text-teal-400 text-xl">{`{}`}</div>
-                    <div className="w-24 h-24 rounded-full bg-blue-400"></div>
-                    <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-                      <div className="w-16 h-2 bg-blue-400 rounded-full mb-1"></div>
-                      <div className="w-20 h-2 bg-blue-400 rounded-full"></div>
-                    </div>
-                    <div className="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2 text-purple-400 text-xl">{`[]`}</div>
-                    <div className="absolute bottom-1/4 right-1/2 transform translate-x-1/2 translate-y-1/2 text-yellow-400 text-xl">{`()`}</div>
-                </div>
-              </div>
+              <img
+                src="/Profile-Pic.png"
+                alt="Profile"
+                className="w-1/2 h-1/2 rounded-full shadow-md border-4 border-blue-500 hover:scale-105 transition-transform"
+              />
+            </div>
              {/* Text Content */}
               <div className="text-left rounded-lg shadow-xl p-8 bg-slate-800">
                 {/* ... existing about text content ... */}
@@ -274,7 +267,7 @@ export default function PersonalWebsite() {
                       <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Numpy</span>
                       <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Data Generation/Manipulation</span>
                   </div>
-                  <a href="#" className="text-indigo-400 hover:underline mt-auto">View Code</a>
+                  <a href="https://github.com/Andy-Borch/Fastest-Algorithm-Predictor" target="_blank" rel="noopener noreferrer" className="text-indigo-300 hover:text-teal-400 transition-colors duration-300">View Code</a>
             </div>
             {/* Project 2 */}
             <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col">
@@ -317,32 +310,33 @@ export default function PersonalWebsite() {
           // Removed fadeTransition props
         >
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">Academic Background</h2>
-             {/* Education 1 */}
-              <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
-                {/* ... existing education 1 content ... */}
-                  <div className="absolute top-0 left-0 -mt-4 -ml-4 w-16 h-16 rounded-full bg-indigo-500 flex items-center justify-center text-white text-xl font-bold">BS</div>
-                  <h3 className="text-xl font-semibold mb-2">Computer Science</h3>
-                  <h4 className="text-lg text-green-500 mb-2">Colorado State University</h4>
-                  <p className="text-md mb-4">Focused on software engineering and HPC areas.</p>
-                  <ul className="list-disc pl-5 text-left">
-                      <li>Relevant coursework: Data Structures, Algorithms, Operating Systems, Machine Learning</li>
-                  </ul>
-                  <div className="absolute bottom-4 right-4 text-sm text-gray-400">2021 - 2025</div>
+            <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">Academic Background</h2>
+            {/* Education 1 */}
+            <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
+              <div className="absolute top-0 left-0 -mt-4 -ml-4 w-16 h-15 rounded-full bg-green-600 flex items-center justify-center text-white text-xl font-bold">BS</div>
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-semibold mb-2">Computer Science</h3>
+                <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">2021-2025</div>
               </div>
-             {/* Education 2 */}
+              <h4 className="text-lg text-green-500 mb-2">Colorado State University</h4>
+              <p className="text-md mb-4">Focused on software engineering and HPC areas.</p>
+              <ul className="list-disc pl-5 text-left">
+                <li>Relevant coursework: Data Structures, Algorithms, Operating Systems, Machine Learning</li>
+              </ul>
+            </div>
+            {/* Education 2 (Example - you can duplicate and modify for more entries) */}
               <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
-                {/* ... existing education 2 content ... */}
-                  <div className="absolute top-0 right-0 -mt-4 -mr-4 w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center text-white text-xl font-bold">MS</div>
-                  <h3 className="text-xl font-semibold mb-2">Software Engineering</h3>
-                  <h4 className="text-lg text-teal-300 mb-2">Graduate Institute of Innovation</h4>
-                  <p className="text-md mb-4">Advanced studies in software architecture, design patterns, and project management.</p>
-                  <ul className="list-disc pl-5 text-left">
-                      <li>Specialized in scalable systems.</li>
-                      <li>Participated in research projects.</li>
-                  </ul>
-                  <div className="absolute bottom-4 left-4 text-sm text-gray-400">2020 - 2022</div>
+              <div className="absolute top-0 left-0 -mt-4 -ml-4 w-16 h-15 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xl font-bold">MS</div>
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-semibold mb-2">Data Science</h3>
+                <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">2025 - 2027 (Expected)</div>
               </div>
+              <h4 className="text-lg text-green-500 mb-2">University of Example</h4>
+              <p className="text-md mb-4">Exploring advanced analytics and machine learning techniques.</p>
+              <ul className="list-disc pl-5 text-left">
+                <li>Relevant coursework: Statistical Modeling, Big Data, Deep Learning</li>
+              </ul>
+            </div>
           </div>
         </motion.section>
 
@@ -428,10 +422,11 @@ export default function PersonalWebsite() {
         <footer className="p-6 bg-slate-800 text-gray-300 text-center">
             <p>&copy; 2025 Anderson Borch | All rights reserved</p>
             <div className="flex justify-center space-x-6 mt-4">
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300">GitHub</a>
+              <a href="https://github.com/Andy-Borch" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300">GitHub</a>
               <a href="https://orcid.org/yourorcidid" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300">ORCID</a>
-              <a href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/andy-borch" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300">LinkedIn</a>
             </div>
+            <p className="mt-4 text-sm text-gray-400">Last updated: May 2025</p>
         </footer>
       </div>
     </SectionContext.Provider>
