@@ -16,6 +16,7 @@ export default function PersonalWebsite() {
     'experience',
     'projects',
     'hobbies',
+    'certifications',
     'supercomputing',
   ]);
 
@@ -28,6 +29,7 @@ export default function PersonalWebsite() {
   const educationRef = useRef(null);
   const hobbiesRef = useRef(null);
   const supercomputingRef = useRef(null);
+  const certificationsRef = useRef(null);
 
   // --- Scroll and Transform logic for EACH section ---
 
@@ -56,6 +58,7 @@ export default function PersonalWebsite() {
   const { scale: educationScale } = useSectionScale(educationRef);
   const { scale: hobbiesScale } = useSectionScale(hobbiesRef);
   const { scale: supercomputingScale } = useSectionScale(supercomputingRef);
+  const { scale: certificationsScale } = useSectionScale(certificationsRef);
 
 
   const projectData = [
@@ -107,8 +110,9 @@ export default function PersonalWebsite() {
                 <li><a href="#projects" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Projects<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
                 <li><a href="#experience" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Experience<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
                 <li><a href="#education" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Education<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
-                <li><a href="#hobbies" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Hobbies<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
                 <li><a href="#supercomputing" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Supercomputing<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
+                <li><a href="#certifications" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Certifications<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
+                <li><a href="#hobbies" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Hobbies<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
             </ul>
           </nav>
         </header>
@@ -167,10 +171,10 @@ export default function PersonalWebsite() {
                 <div className="mb-4">
                     <h4 className="text-lg font-semibold mb-2 text-yellow-300">Technical Skills</h4>
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">C++</span>
-                      <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
-                      <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Machine Learning</span>
-                      <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">HPC Tools</span>
+                      <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">C++</span>
+                      <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">Python</span>
+                      <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">Machine Learning</span>
+                      <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">HPC Tools</span>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -183,63 +187,6 @@ export default function PersonalWebsite() {
                       <p className="text-md">Always exploring new technologies and improving my skills.</p>
                     </div>
                 </div>
-              </div>
-          </div>
-        </motion.section>
-
-        {/* Experience Section */}
-        <motion.section
-          ref={experienceRef}
-          id="experience"
-          style={{ scale: experienceScale }} // Apply dynamic scale
-          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl" // Added origin-center
-          // Removed fadeTransition props
-        >
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-              <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">Work Experience</h2>
-             {/* Experience 1 */}
-              <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
-                {/* ... existing experience 1 content ... */}
-                <div className="flex justify-between items-center mb-2">
-                    <h4 className="text-xl font-semibold text-teal-200">Job 1</h4>
-                    <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">2022 - Present</div>
-                </div>
-                <h3 className="text-xl font-lg text-indigo-400 mb-4">Awesome Software Inc.</h3>
-                <ul className="text-lg mb-4 list-disc pl-5 text-left">
-                    <li>Great at what I do.</li>
-                    <li>I build innovative solutions.</li>
-                </ul>
-                <div className="mb-4">
-                    <h4 className="text-lg font-semibold text-yellow-300 mb-2">Technical Skills</h4>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">JavaScript</span>
-                      <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">React</span>
-                      <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Node.js</span>
-                      <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
-                    </div>
-                </div>
-              </div>
-             {/* Experience 2 */}
-              <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
-                {/* ... existing experience 2 content ... */}
-                  <div className="flex justify-between items-center mb-2">
-                      <h4 className="text-xl font-semibold text-teal-200">HPC Research Assistant</h4>
-                      <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">Summer 2024</div>
-                  </div>
-                  <h3 className="text-xl font-lg text-green-500 mb-4">Colorado State University</h3>
-                  <ul className="text-lg mb-4 list-disc pl-5 text-left">
-                      <li>Great at what I do.</li>
-                      <li>I build innovative solutions.</li>
-                  </ul>
-                  <div className="mb-4">
-                      <h4 className="text-lg font-semibold text-yellow-300 mb-2">Tools Used</h4>
-                      <div className="flex flex-wrap gap-2">
-                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">NVIDIA Jetson Nano</span>
-                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Tensorflow</span>
-                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
-                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Benchmarking Tools</span>
-                      </div>
-                  </div>
               </div>
           </div>
         </motion.section>
@@ -275,13 +222,13 @@ export default function PersonalWebsite() {
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
                       <img src="https://via.placeholder.com/640x360/4A5568" alt="Project 2 Placeholder" className="object-cover w-full h-full" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Task Management Application</h3>
-                  <p className="text-md mb-4">A web application for creating, organizing, and managing tasks.</p>
+                  <h3 className="text-xl font-semibold mb-2">Image Proccesor</h3>
+                  <p className="text-md mb-4">Application that checks image file formats and creates checksums, conversions, and correlations</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">Vue.js</span>
-                      <span className="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">Firebase</span>
+                      <span className="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">C++</span>
+                      <span className="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">Valgrind</span>
                   </div>
-                  <a href="#" className="text-teal-400 hover:underline mt-auto">View Source</a>
+                  <a href="#" className="text-teal-400 hover:underline mt-auto">View Code (ADD LINK HERE)</a>
             </div>
             {/* Project 3 */}
             <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col">
@@ -298,6 +245,63 @@ export default function PersonalWebsite() {
                   </div>
                   <a href="#" className="text-orange-400 hover:underline mt-auto">Explore Demo</a>
             </div>
+          </div>
+        </motion.section>
+
+{/* Experience Section */}
+<motion.section
+          ref={experienceRef}
+          id="experience"
+          style={{ scale: experienceScale }} // Apply dynamic scale
+          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl" // Added origin-center
+          // Removed fadeTransition props
+        >
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">Work Experience</h2>
+             {/* Experience 1 */}
+              <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
+                {/* ... existing experience 1 content ... */}
+                <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-xl font-semibold text-teal-200">Summer Intern</h4>
+                    <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">May, 2025 - Present</div>
+                </div>
+                <h3 className="text-xl font-lg text-indigo-400 mb-4">Oak Ridge National Lab</h3>
+                <ul className="text-lg mb-4 list-disc pl-5 text-left">
+                    <li>Great at what I do.</li>
+                    <li>I build innovative solutions.</li>
+                </ul>
+                <div className="mb-4">
+                    <h4 className="text-lg font-semibold text-yellow-300 mb-2">Technical Skills</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">Job Schedulers</span>
+                      <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">Slurm</span>
+                      <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">HPC</span>
+                      <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">Linux</span>
+                    </div>
+                </div>
+              </div>
+             {/* Experience 2 */}
+              <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
+                {/* ... existing experience 2 content ... */}
+                  <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-xl font-semibold text-teal-200">HPC Research Assistant</h4>
+                      <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">Summer 2024</div>
+                  </div>
+                  <h3 className="text-xl font-lg text-green-500 mb-4">Colorado State University</h3>
+                  <ul className="text-lg mb-4 list-disc pl-5 text-left">
+                      <li>Great at what I do.</li>
+                      <li>I build innovative solutions.</li>
+                  </ul>
+                  <div className="mb-4">
+                      <h4 className="text-lg font-semibold text-yellow-300 mb-2">Tools Used</h4>
+                      <div className="flex flex-wrap gap-2">
+                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">NVIDIA Jetson Nano</span>
+                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Tensorflow</span>
+                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
+                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Benchmarking Tools</span>
+                      </div>
+                  </div>
+              </div>
           </div>
         </motion.section>
 
@@ -352,10 +356,10 @@ export default function PersonalWebsite() {
               <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">My Adventures in Supercomputing</h2>
               <div className="rounded-lg shadow-xl p-8 bg-slate-800">
                 <p className="text-lg mb-4">
-                    Whoa, supercomputers! Got to spend some time tinkering with these massive machines. It was pretty wild seeing the sheer scale and power. Definitely learned a ton about high-performance computing and parallel processing. Plus, the blinking lights were kinda mesmerizing. 😉
+                    I've attended to supercomputing conferences, SC24 and SC25, where I completed workshops, tutorials, and hands-on sessions. I learned about the latest advancements in high-performance computing, parallel programming, and data analysis techniques. These are some pictures of cool stuff I found while there.
                 </p>
                 <p className="text-sm text-gray-500 mb-2">
-                    Key takeaways: Parallel programming concepts, job scheduling, system administration basics.
+                  Topics Covered In Workshops: Slurm, MPI, OpenMP, CUDA, and more.
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -369,52 +373,78 @@ export default function PersonalWebsite() {
           </div>
         </motion.section>
 
-        {/* Hobbies Section */}
+
+{/* Certifications Section */}
+<motion.section
+  ref={certificationsRef}
+  id="certifications"
+  style={{ scale: certificationsScale }}
+  className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
+>
+  <div className="container mx-auto">
+    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">My Certifications</h2>
+    <div className="flex flex-col gap-8">
+      {/* AWS Certification (Image on Left) */}
+      <div className="bg-teal-100 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center">
+        <img
+          src="/aws-certified-cloud-practitioner.png"
+          alt="AWS Certified Cloud Practitioner"
+          className="w-24 h-24 rounded-full mb-4 md:mb-0 md:mr-4 shadow-md"
+        />
+        <div className="text-center md:text-left">
+          <h3 className="text-xl font-semibold text-teal-700 mb-2">AWS Certified Cloud Practitioner</h3>
+          <p className="text-gray-600 mb-2">Demonstrates foundational knowledge of AWS services and concepts.</p>
+          <p className="text-sm text-gray-500">Issued: August 2023</p>
+        </div>
+      </div>
+
+      {/* Google Cloud Certification (Image on Right) */}
+      <div className="bg-teal-100 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center self-end">
+        <div className="text-center md:text-right">
+          <h3 className="text-xl font-semibold text-teal-700 mb-2">Google Cloud Professional Cloud Architect</h3>
+          <p className="text-gray-600 mb-2">Validates expertise in designing and managing robust, scalable, and dynamic solutions on Google Cloud.</p>
+          <p className="text-sm text-gray-500">Issued: November 2024</p>
+        </div>
+        <img
+          src="/google-cloud-certified-professional-cloud-architect.png"
+          alt="Google Cloud Professional Cloud Architect"
+          className="w-24 h-24 rounded-full mb-4 md:mb-0 md:ml-4 shadow-md"
+        />
+      </div>
+    </div>
+  </div>
+</motion.section>
+
+
+{/* Hobbies Section */}
         <motion.section
           ref={hobbiesRef}
           id="hobbies"
-          style={{ scale: hobbiesScale }} // Apply dynamic scale
-          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl" // Added origin-center
-          // Removed fadeTransition props
+          style={{ scale: hobbiesRef }}
+          className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
         >
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-              <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">What I Do When Not Coding</h2>
-             {/* Hobby Cards - No changes needed inside these divs */}
-              <div className="rounded-lg shadow-md overflow-hidden">
-                  <img src="https://via.placeholder.com/400x300/A0B4BF" alt="Photography Placeholder" className="object-cover w-full h-full" />
-                  <div className="p-4 bg-slate-100">
-                      <h3 className="text-xl font-semibold mb-2 text-slate-700">Photography</h3>
-                      <p className="text-md text-gray-600">Capturing moments and exploring different perspectives through the lens.</p>
-                  </div>
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Hobbies</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div>
+                <img src="https://via.placeholder.com/200x150/A0B4BF" alt="Hobby 1" className="rounded-md" />
               </div>
-              <div className="rounded-lg shadow-md overflow-hidden">
-                  <img src="https://via.placeholder.com/300x400/8F9BA8" alt="Hiking Placeholder" className="object-cover w-full h-full" />
-                  <div className="p-4 bg-slate-100">
-                      <h3 className="text-xl font-semibold mb-2 text-slate-700">Hiking & Outdoors</h3>
-                      <p className="text-md text-gray-600">Exploring trails, enjoying nature, and getting some fresh air.</p>
-                  </div>
+              <div>
+                <img src="https://via.placeholder.com/200x150/8F9BA8" alt="Hobby 2" className="rounded-md" />
               </div>
-              <div className="rounded-lg shadow-md overflow-hidden lg:col-span-1">
-                  <img src="https://via.placeholder.com/600x200/778899" alt="Guitar Placeholder" className="object-cover w-full h-full" />
-                  <div className="p-4 bg-slate-100">
-                      <h3 className="text-xl font-semibold mb-2 text-slate-700">Playing Guitar</h3>
-                      <p className="text-md text-gray-600">Strumming chords and making some noise (hopefully good noise!).</p>
-                  </div>
+              <div>
+                <img src="https://via.placeholder.com/200x150/778899" alt="Hobby 3" className="rounded-md" />
               </div>
-              <div className="rounded-lg shadow-md overflow-hidden">
-                  <img src="https://via.placeholder.com/350x350/B0C4DE" alt="Reading Placeholder" className="object-cover w-full h-full" />
-                  <div className="p-4 bg-slate-100">
-                      <h3 className="text-xl font-semibold mb-2 text-slate-700">Reading Sci-Fi</h3>
-                      <p className="text-md text-gray-600">Getting lost in other worlds and exploring futuristic ideas.</p>
-                  </div>
+              <div>
+                <img src="https://via.placeholder.com/200x150/B0C4DE" alt="Hobby 4" className="rounded-md" />
               </div>
-              <div className="rounded-lg shadow-md overflow-hidden">
-                  <img src="https://via.placeholder.com/450x250/D3D3D3" alt="Learning Placeholder" className="object-cover w-full h-full" />
-                  <div className="p-4 bg-slate-100">
-                      <h3 className="text-xl font-semibold mb-2 text-slate-700">Learning New Things</h3>
-                      <p className="text-md text-gray-600">Always eager to expand my knowledge and pick up new skills.</p>
-                  </div>
+              <div>
+                <img src="https://via.placeholder.com/200x150/ADD8E6" alt="Hobby 5" className="rounded-md" />
               </div>
+              <div>
+                <img src="https://via.placeholder.com/200x150/E0FFFF" alt="Hobby 6" className="rounded-md" />
+              </div>
+            </div>
           </div>
         </motion.section>
 
