@@ -134,12 +134,15 @@ export default function PersonalWebsite() {
               <p className="text-2xl text-gray-300 mb-6">High Performance Computing | Scientific Computing | Quantum Computing</p>
             </div>
             {/* Image/Icon Section */}
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center">
               <img
-                src="/SC.png"
+                src="/Frontier-crop.jpg"
                 alt="Profile"
-                className="w-45 h-45 rounded-full shadow-md border-4 border-blue-500 hover:scale-105 transition-transform"
+                className="w-45 h-45 rounded-lg shadow-md border-4 border-blue-500 hover:scale-105 transition-transform"
               />
+              <p className="mt-2 text-sm text-gray-400 italic text-center">
+                1 of 74 Racks of the Frontier Supercomputer at SC25
+              </p>
             </div>
           </div>
         </motion.section>
@@ -345,79 +348,103 @@ export default function PersonalWebsite() {
         </motion.section>
 
         {/* Supercomputing Experience */}
-        <motion.section
-          ref={supercomputingRef}
-          id="supercomputing"
-          style={{ scale: supercomputingScale }} // Apply dynamic scale
-          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl" // Added origin-center
-          // Removed fadeTransition props
-        >
-            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">My Adventures in Supercomputing</h2>
-              <div className="rounded-lg shadow-xl p-8 bg-slate-800">
-                <p className="text-lg mb-4">
-                    I've attended to supercomputing conferences, SC24 and SC25, where I completed workshops, tutorials, and hands-on sessions. I learned about the latest advancements in high-performance computing, parallel programming, and data analysis techniques. These are some pictures of cool stuff I found while there.
-                </p>
-                <p className="text-sm text-gray-400 mb-2">
-                  Topics Covered In Workshops: Slurm, MPI, OpenMP, CUDA, and more.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="aspect-w-16 aspect-h-9 rounded-md overflow-hidden shadow-md">
-                    <img src="https://via.placeholder.com/640x360/2E3748" alt="Supercomputer 1 Placeholder" className="object-cover w-full h-full" />
-                </div>
-                <div className="aspect-w-16 aspect-h-9 rounded-md overflow-hidden shadow-md">
-                    <img src="https://via.placeholder.com/640x360/4A5568" alt="Supercomputer 2 Placeholder" className="object-cover w-full h-full" />
-                </div>
-              </div>
-          </div>
-        </motion.section>
-
-{/* Certifications Section */}
+        {/* Supercomputing Experience */}
 <motion.section
-  ref={certificationsRef}
-  id="certifications"
-  style={{ scale: certificationsScale }}
-  className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
+  ref={supercomputingRef}
+  id="supercomputing"
+  style={{ scale: supercomputingScale }}
+  className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl relative" // Added relative class
 >
-  <div className="container mx-auto">
-    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Certifications</h2>
-    <div className="flex flex-col gap-8">
+  <div className="container mx-auto flex flex-col items-center gap-12">
+    <h2 className="text-3xl font-semibold text-gray-300 underline text-center mb-4">
+      My Experiences at Supercomputing
+    </h2>
 
-    <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center" style={{ minHeight: '15rem' }}>
-      <img
-        src="/ORNL-Cert.jpg"
-        alt="Hands-on HPC Certification"
-        className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-48"
-        style={{ transformOrigin: '100% 0' }}
-      />
-      <div className="text-center md:text-left md:ml-6 flex-1">
-        <h3 className="text-xl font-semibold text-teal-200 mb-2">Hands-on With HPC</h3>
-        <p className="text-gray-300 mb-2">Demonstrates introduction to HPC tools like Slurm, MPI, OpenMP, and more.</p>
-        <p className="text-sm text-gray-400">Issued: October 2024</p>
+    {/* SC23 Logo - Top Left */}
+<div className="absolute top-4 left-4 z-10">
+  <img
+    src="/sc23.png"
+    alt="SC23 Conference Logo"
+    className="object-cover w-1/4 h-1/4 rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+  />
+</div>
+
+{/* SC24 Logo - Top Right */}
+<div className="absolute top-4 right-4 z-10">
+  <img
+    src="/sc-24.jpg"
+    alt="SC24 Conference Logo"
+    className="object-cover w-34 h-34 rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+  />
+</div>
+
+
+    {/* Top Row Images */}
+    <div className="flex flex-wrap justify-center gap-12">
+      <div className="flex flex-col items-center max-w-xs">
+        <img
+          src="/NVIDIA-gpu.jpg"
+          alt="NVIDIA GPU"
+          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+        />
+        <p className="mt-3 text-sm text-gray-400 italic text-center">NVIDIA H100 GPU</p>
+      </div>
+      <div className="flex flex-col items-center max-w-xs">
+        <img
+          src="/Quantinuum.jpg"
+          alt="Quantinuum"
+          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+        />
+        <p className="mt-3 text-sm text-gray-400 italic text-center">Quantinuum's H2 Quantum Computer</p>
       </div>
     </div>
 
-
-      <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center self-end justify-end" style={{ minHeight: '15rem' }}>
-        <div className="text-center md:text-right md:mr-6 flex-1">
-          <h3 className="text-xl font-semibold text-teal-200 mb-2">Scientific Computing Masterclass</h3>
-          <p className="text-gray-300 mb-2">Demonstrates Knowledge of CUDA, HIP, MPI, OpenMP, and more.</p>
-          <p className="text-sm text-gray-400">Issued: December 2024</p>
-        </div>
+    {/* Middle Row with Side Images and Text Box */}
+    <div className="flex flex-wrap justify-center items-center gap-20">
+      <div className="flex flex-col items-center max-w-xs hidden md:block">
         <img
-          src="/Udemy_Cert.jpg"
-          alt="Udemy Certification"
-          className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-60 md:ml-6"
-          style={{ transformOrigin: '100% 0' }}
+          src="/IBM-quantum.jpg"
+          alt="IBM Quantum"
+          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
+        <p className="mt-3 text-sm text-gray-400 italic text-center">IBM's Quantum Computers</p>
+      </div>
+
+      <div className="rounded-lg shadow-xl p-10 bg-slate-800 max-w-xl">
+        <p className="text-xl mb-6">
+          I've attended two supercomputing conferences, SC23 and SC24, where I completed workshops, tutorials, and hands-on sessions. I learned about the latest advancements in high-performance computing, parallel programming, and data analysis techniques. These are some pictures of cool stuff I found while there.
+        </p>
+        <p className="text-md text-gray-400 mb-2">
+          Topics Covered In Workshops: Slurm, MPI, OpenMP, CUDA, and more.
+        </p>
+      </div>
+
+      <div className="flex flex-col items-center max-w-xs hidden md:block">
+        <img
+          src="/F1.jpg"
+          alt="Formula 1"
+          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+        />
+        <p className="mt-3 text-sm text-gray-400 italic text-center">Aston Martin Formula 1 Car</p>
+      </div>
+    </div>
+
+    {/* Bottom Image */}
+    <div className="flex justify-center mt-4">
+      <div className="flex flex-col items-center max-w-xs">
+        <img
+          src="/Immersion.jpg"
+          alt="Immersion Cooling"
+          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+        />
+        <p className="mt-3 text-sm text-gray-400 italic text-center">Immersion Cooled System</p>
       </div>
     </div>
   </div>
 </motion.section>
 
-{/* Hobbies Section */}
-{/* Hobbies Section */}
+
+
 {/* Hobbies Section */}
 <motion.section
   ref={hobbiesRef}
