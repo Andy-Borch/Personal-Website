@@ -358,7 +358,7 @@ export default function PersonalWebsite() {
                 <p className="text-lg mb-4">
                     I've attended to supercomputing conferences, SC24 and SC25, where I completed workshops, tutorials, and hands-on sessions. I learned about the latest advancements in high-performance computing, parallel programming, and data analysis techniques. These are some pictures of cool stuff I found while there.
                 </p>
-                <p className="text-sm text-gray-500 mb-2">
+                <p className="text-sm text-gray-400 mb-2">
                   Topics Covered In Workshops: Slurm, MPI, OpenMP, CUDA, and more.
                 </p>
               </div>
@@ -417,11 +417,13 @@ export default function PersonalWebsite() {
 </motion.section>
 
 {/* Hobbies Section */}
+{/* Hobbies Section */}
+{/* Hobbies Section */}
 <motion.section
   ref={hobbiesRef}
   id="hobbies"
-  style={{ scale: hobbiesRef }}
-  className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
+  style={{ scale: hobbiesScale }}  // Assuming you're using a state for scaling here
+  className="min-h-screen flex flex-col items-center justify-start p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
 >
   <div className="container mx-auto">
     <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Hobbies</h2>
