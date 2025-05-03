@@ -417,36 +417,50 @@ export default function PersonalWebsite() {
 
 
 {/* Hobbies Section */}
-        <motion.section
-          ref={hobbiesRef}
-          id="hobbies"
-          style={{ scale: hobbiesRef }}
-          className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
-        >
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Hobbies</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div>
-                <img src="https://via.placeholder.com/200x150/A0B4BF" alt="Hobby 1" className="rounded-md" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/200x150/8F9BA8" alt="Hobby 2" className="rounded-md" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/200x150/778899" alt="Hobby 3" className="rounded-md" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/200x150/B0C4DE" alt="Hobby 4" className="rounded-md" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/200x150/ADD8E6" alt="Hobby 5" className="rounded-md" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/200x150/E0FFFF" alt="Hobby 6" className="rounded-md" />
-              </div>
-            </div>
-          </div>
-        </motion.section>
+<motion.section
+  ref={hobbiesRef}
+  id="hobbies"
+  style={{ scale: hobbiesRef }}
+  className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
+>
+  <div className="container mx-auto">
+    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Hobbies</h2>
+    <div className="grid grid-cols-2 gap-6" style={{ padding: '0 10vw', rowGap: '8vw', columnGap: '8vw' }}>
+      {/* First Image */}
+      <div className="relative col-span-1 row-span-1">
+        <img
+          src="/Hobbies1.jpg"
+          alt="Hobby 1"
+          className="w-full h-full object-cover rounded-lg shadow-md border-4 border-gray-500 hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      {/* Second Image */}
+      <div className="relative col-span-1 row-span-1">
+        <img
+          src="/Hobbies5.jpg"
+          alt="Hobby 2"
+          className="w-full h-full object-cover rounded-lg shadow-md border-4 border-gray-500 hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      {/* Third Image */}
+      <div className="relative col-span-1 row-span-1">
+        <img
+          src="/Hobbies3.jpg"
+          alt="Hobby 3"
+          className="w-full h-full object-cover rounded-lg shadow-md border-4 border-gray-500 hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      {/* Fourth Image */}
+      <div className="relative col-span-1 row-span-1">
+        <img
+          src="/Hobbies4.jpg"
+          alt="Hobby 4"
+          className="w-full h-full object-cover rounded-lg shadow-md border-4 border-gray-500 hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    </div>
+  </div>
+</motion.section>
 
         {/* Footer Section (Keep as is) */}
         <footer className="p-6 bg-slate-800 text-gray-300 text-center">
