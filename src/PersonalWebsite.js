@@ -265,7 +265,7 @@ export default function PersonalWebsite() {
               <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
                 {/* ... existing experience 1 content ... */}
                 <div className="flex justify-between items-center mb-2">
-                    <h4 className="text-xl font-semibold text-teal-200">Summer Intern</h4>
+                    <h4 className="text-xl font-semibold text-teal-200">ORISE HPC Intern</h4>
                     <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">May, 2025 - Present</div>
                 </div>
                 <h3 className="text-xl font-lg text-indigo-400 mb-4">Oak Ridge National Lab</h3>
@@ -292,8 +292,9 @@ export default function PersonalWebsite() {
                   </div>
                   <h3 className="text-xl font-lg text-green-500 mb-4">Colorado State University</h3>
                   <ul className="text-lg mb-4 list-disc pl-5 text-left">
-                      <li>Great at what I do.</li>
-                      <li>I build innovative solutions.</li>
+                    <li>Collected and analyzed run time and power consumption data of machine learning models executed on various processing elements to optimize performance under time and power constraints.</li>
+                    <li>Utilized NVIDIA Jetson Nano devices, TensorFlow, and Keras to train, optimize, and distribute machine learning models across CPU, GPU, and Video Image Coding Processors.</li>
+                    <li>Developed scheduling strategies to balance CPU vs. GPU performance and allocate resources effectively for efficient model training and inference.</li>
                   </ul>
                   <div className="mb-4">
                       <h4 className="text-lg font-semibold text-yellow-300 mb-2">Tools Used</h4>
@@ -347,101 +348,100 @@ export default function PersonalWebsite() {
           </div>
         </motion.section>
 
-        {/* Supercomputing Experience */}
-        {/* Supercomputing Experience */}
-<motion.section
-  ref={supercomputingRef}
-  id="supercomputing"
-  style={{ scale: supercomputingScale }}
-  className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl relative" // Added relative class
->
-  <div className="container mx-auto flex flex-col items-center gap-12">
-    <h2 className="text-3xl font-semibold text-gray-300 underline text-center mb-4">
-      My Experiences at Supercomputing
-    </h2>
+{/* Supercomputing Experience */}
+      <motion.section
+        ref={supercomputingRef}
+        id="supercomputing"
+        style={{ scale: supercomputingScale }}
+        className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl relative" // Added relative class
+      >
+        <div className="container mx-auto flex flex-col items-center gap-12">
+          <h2 className="text-3xl font-semibold text-gray-300 underline text-center mb-4">
+            My Experiences at Supercomputing
+          </h2>
 
-    {/* SC23 Logo - Top Left */}
-<div className="absolute top-4 left-4 z-10">
-  <img
-    src="/sc23.png"
-    alt="SC23 Conference Logo"
-    className="object-cover w-1/4 h-1/4 rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-  />
-</div>
-
-{/* SC24 Logo - Top Right */}
-<div className="absolute top-4 right-4 z-10">
-  <img
-    src="/sc-24.jpg"
-    alt="SC24 Conference Logo"
-    className="object-cover w-34 h-34 rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-  />
-</div>
-
-
-    {/* Top Row Images */}
-    <div className="flex flex-wrap justify-center gap-12">
-      <div className="flex flex-col items-center max-w-xs">
+          {/* SC23 Logo - Top Left */}
+      <div className="absolute top-4 left-4 z-10">
         <img
-          src="/NVIDIA-gpu.jpg"
-          alt="NVIDIA GPU"
-          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+          src="/sc23.png"
+          alt="SC23 Conference Logo"
+          className="object-cover w-1/4 h-1/4 rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
-        <p className="mt-3 text-sm text-gray-400 italic text-center">NVIDIA H100 GPU</p>
-      </div>
-      <div className="flex flex-col items-center max-w-xs">
-        <img
-          src="/Quantinuum.jpg"
-          alt="Quantinuum"
-          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-        />
-        <p className="mt-3 text-sm text-gray-400 italic text-center">Quantinuum's H2 Quantum Computer</p>
-      </div>
-    </div>
-
-    {/* Middle Row with Side Images and Text Box */}
-    <div className="flex flex-wrap justify-center items-center gap-20">
-      <div className="flex flex-col items-center max-w-xs hidden md:block">
-        <img
-          src="/IBM-quantum.jpg"
-          alt="IBM Quantum"
-          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-        />
-        <p className="mt-3 text-sm text-gray-400 italic text-center">IBM's Quantum Computers</p>
       </div>
 
-      <div className="rounded-lg shadow-xl p-10 bg-slate-800 max-w-xl">
-        <p className="text-xl mb-6">
-          I've attended two supercomputing conferences, SC23 and SC24, where I completed workshops, tutorials, and hands-on sessions. I learned about the latest advancements in high-performance computing, parallel programming, and data analysis techniques. These are some pictures of cool stuff I found while there.
-        </p>
-        <p className="text-md text-gray-400 mb-2">
-          Topics Covered In Workshops: Slurm, MPI, OpenMP, CUDA, and more.
-        </p>
+      {/* SC24 Logo - Top Right */}
+      <div className="absolute top-4 right-4 z-10">
+        <img
+          src="/sc-24.jpg"
+          alt="SC24 Conference Logo"
+          className="object-cover w-34 h-34 rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+        />
       </div>
 
-      <div className="flex flex-col items-center max-w-xs hidden md:block">
-        <img
-          src="/F1.jpg"
-          alt="Formula 1"
-          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-        />
-        <p className="mt-3 text-sm text-gray-400 italic text-center">Aston Martin Formula 1 Car</p>
-      </div>
-    </div>
 
-    {/* Bottom Image */}
-    <div className="flex justify-center mt-4">
-      <div className="flex flex-col items-center max-w-xs">
-        <img
-          src="/Immersion.jpg"
-          alt="Immersion Cooling"
-          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-        />
-        <p className="mt-3 text-sm text-gray-400 italic text-center">Immersion Cooled System</p>
-      </div>
-    </div>
-  </div>
-</motion.section>
+          {/* Top Row Images */}
+          <div className="flex flex-wrap justify-center gap-12">
+            <div className="flex flex-col items-center max-w-xs">
+              <img
+                src="/NVIDIA-gpu.jpg"
+                alt="NVIDIA GPU"
+                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+              />
+              <p className="mt-3 text-sm text-gray-400 italic text-center">NVIDIA H100 GPU</p>
+            </div>
+            <div className="flex flex-col items-center max-w-xs">
+              <img
+                src="/Quantinuum.jpg"
+                alt="Quantinuum"
+                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+              />
+              <p className="mt-3 text-sm text-gray-400 italic text-center">Quantinuum's H2 Quantum Computer</p>
+            </div>
+          </div>
+
+          {/* Middle Row with Side Images and Text Box */}
+          <div className="flex flex-wrap justify-center items-center gap-20">
+            <div className="flex flex-col items-center max-w-xs hidden md:block">
+              <img
+                src="/IBM-quantum.jpg"
+                alt="IBM Quantum"
+                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+              />
+              <p className="mt-3 text-sm text-gray-400 italic text-center">IBM's Quantum Computers</p>
+            </div>
+
+            <div className="rounded-lg shadow-xl p-10 bg-slate-800 max-w-xl">
+              <p className="text-xl mb-6">
+                I've attended two supercomputing conferences, SC23 and SC24, where I completed workshops, tutorials, and hands-on sessions. I learned about the latest advancements in high-performance computing, parallel programming, and data analysis techniques. These are some pictures of cool stuff I found while there.
+              </p>
+              <p className="text-md text-gray-400 mb-2">
+                Topics Covered In Workshops: Slurm, MPI, OpenMP, CUDA, and more.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center max-w-xs hidden md:block">
+              <img
+                src="/F1.jpg"
+                alt="Formula 1"
+                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+              />
+              <p className="mt-3 text-sm text-gray-400 italic text-center">Aston Martin Formula 1 Car</p>
+            </div>
+          </div>
+
+          {/* Bottom Image */}
+          <div className="flex justify-center mt-4">
+            <div className="flex flex-col items-center max-w-xs">
+              <img
+                src="/Immersion.jpg"
+                alt="Immersion Cooling"
+                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+              />
+              <p className="mt-3 text-sm text-gray-400 italic text-center">Immersion Cooled System</p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
 
 
 
