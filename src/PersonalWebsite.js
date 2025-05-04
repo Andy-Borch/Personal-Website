@@ -120,6 +120,7 @@ export default function PersonalWebsite() {
         {/* --- Apply ref and style={{ scale }} to each section --- */}
 
         {/* Home Section */}
+        {/* TODO: fix images overlapping and being ugly when shrinking the screen size */}
         <motion.section
           ref={homeRef}
           id="home"
@@ -169,8 +170,7 @@ export default function PersonalWebsite() {
                 {/* ... existing about text content ... */}
                 <h2 className="text-3xl font-semibold text-gray-300 mb-4">About Me</h2>
                 <h3 className="text-xl font-semibold mb-2 text-teal-200">Computer Science Student Focused on HPC</h3>
-                <p className="text-lg mb-4">I'm Great.</p>
-                <p className="text-lg mb-4">I do cool stuff</p>
+                <p className="text-lg mb-4">I'm a computer science student with a strong interest in high-performance computing, scientific computing, and quantum technologies. I enjoy exploring how advanced computing systems can drive innovation and tackle complex challenges. I've attended Supercomputing (SC) conferences to stay up to date with cutting-edge research and connect with the broader HPC community. Outside of academics, I enjoy skiing, mountain biking, and exploring the mountains.</p>
                 <div className="mb-4">
                     <h4 className="text-lg font-semibold mb-2 text-yellow-300">Technical Skills</h4>
                     <div className="flex flex-wrap gap-2">
@@ -181,14 +181,14 @@ export default function PersonalWebsite() {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2 text-purple-300">Problem Solver</h4>
-                      <p className="text-md">I enjoy tackling complex challenges and finding elegant solutions.</p>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2 text-purple-300">Continuous Learner</h4>
-                      <p className="text-md">Always exploring new technologies and improving my skills.</p>
-                    </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2 text-purple-300">HPC Enthusiast</h4>
+                    <p className="text-md">Fascinated by the power of parallel computing to accelerate discovery and innovation.</p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2 text-purple-300">Curious Researcher</h4>
+                    <p className="text-md">Driven by a desire to understand complex systems and contribute to cutting-edge computing research.</p>
+                  </div>
                 </div>
               </div>
           </div>
@@ -210,12 +210,12 @@ export default function PersonalWebsite() {
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
                       <img src="https://via.placeholder.com/640x360" alt="Project 1 Placeholder" className="object-cover w-full h-full" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Fastest Algorithm Prediction</h3>
+                  <h3 className="text-xl text-teal-200 font-semibold mb-2">Fastest Algorithm Prediction</h3>
                   <p className="text-md mb-4">A machine learning program that predicts the fastest sorting algorithm based on certain features.</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
-                      <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Numpy</span>
-                      <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">Data Generation/Manipulation</span>
+                      <span className="bg-purple-100 text-purple-800 text-md font-medium px-2.5 py-0.5 rounded">Python</span>
+                      <span className="bg-purple-100 text-purple-800 text-md font-medium px-2.5 py-0.5 rounded">Numpy</span>
+                      <span className="bg-purple-100 text-purple-800 text-md font-medium px-2.5 py-0.5 rounded">Data Generation/Manipulation</span>
                   </div>
                   <a href="https://github.com/Andy-Borch/Fastest-Algorithm-Predictor" target="_blank" rel="noopener noreferrer" className="text-indigo-300 hover:text-teal-400 transition-colors duration-300">View Code</a>
             </div>
@@ -225,11 +225,11 @@ export default function PersonalWebsite() {
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
                       <img src="https://via.placeholder.com/640x360/4A5568" alt="Project 2 Placeholder" className="object-cover w-full h-full" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Image Proccesor</h3>
-                  <p className="text-md mb-4">Application that checks image file formats and creates checksums, conversions, and correlations</p>
+                  <h3 className="text-xl text-teal-200 font-semibold mb-2">Image Proccesor</h3>
+                  <p className="text-md mb-4">Application that validates input image file formats and creates checksums, conversions, and correlation scores.</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">C++</span>
-                      <span className="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">Valgrind</span>
+                      <span className="bg-green-100 text-green-800 text-md font-medium px-2.5 py-0.5 rounded">C++</span>
+                      <span className="bg-green-100 text-green-800 text-md font-medium px-2.5 py-0.5 rounded">Valgrind</span>
                   </div>
                   <a href="#" className="text-teal-400 hover:underline mt-auto">View Code (ADD LINK HERE)</a>
             </div>
@@ -239,12 +239,12 @@ export default function PersonalWebsite() {
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
                       <img src="https://via.placeholder.com/640x360/718096" alt="Project 3 Placeholder" className="object-cover w-full h-full" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Data Visualization Dashboard</h3>
+                  <h3 className="text-xl text-teal-200 font-semibold mb-2">Data Visualization Dashboard</h3>
                   <p className="text-md mb-4">A dashboard to display and analyze sample datasets.</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
-                      <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded">Chart.js</span>
-                      <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded">Flask</span>
+                      <span className="bg-yellow-100 text-yellow-800 text-md font-medium px-2.5 py-0.5 rounded">Python</span>
+                      <span className="bg-yellow-100 text-yellow-800 text-md font-medium px-2.5 py-0.5 rounded">Chart.js</span>
+                      <span className="bg-yellow-100 text-yellow-800 text-md font-medium px-2.5 py-0.5 rounded">Flask</span>
                   </div>
                   <a href="#" className="text-orange-400 hover:underline mt-auto">Explore Demo</a>
             </div>
@@ -268,7 +268,7 @@ export default function PersonalWebsite() {
                     <h4 className="text-xl font-semibold text-teal-200">ORISE HPC Intern</h4>
                     <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">May, 2025 - Present</div>
                 </div>
-                <h3 className="text-xl font-lg text-indigo-400 mb-4">Oak Ridge National Lab</h3>
+                <h3 className="text-xl font-lg text-green-500 mb-4">Oak Ridge National Lab</h3>
                 <ul className="text-lg mb-4 list-disc pl-5 text-left">
                     <li>Great at what I do.</li>
                     <li>I build innovative solutions.</li>
@@ -299,10 +299,10 @@ export default function PersonalWebsite() {
                   <div className="mb-4">
                       <h4 className="text-lg font-semibold text-yellow-300 mb-2">Tools Used</h4>
                       <div className="flex flex-wrap gap-2">
-                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">NVIDIA Jetson Nano</span>
-                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Tensorflow</span>
-                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
-                          <span className="bg-blue-200 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Benchmarking Tools</span>
+                          <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">NVIDIA Jetson Nano</span>
+                          <span className="bg-blue-200 text-blue-900 text-sm font-medium px-2.5 py-0.5 rounded">Tensorflow</span>
+                          <span className="bg-blue-200 text-blue-900 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
+                          <span className="bg-blue-200 text-blue-900 text-sm font-medium px-2.5 py-0.5 rounded">Benchmarking Tools</span>
                       </div>
                   </div>
               </div>
@@ -323,32 +323,34 @@ export default function PersonalWebsite() {
             <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
               <div className="absolute top-0 left-0 -mt-4 -ml-4 w-16 h-15 rounded-full bg-green-600 flex items-center justify-center text-white text-xl font-bold">BS</div>
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold mb-2">Computer Science</h3>
+                <h3 className="text-xl text-teal-200 font-semibold mb-2">Computer Science</h3>
                 <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">2021-2025</div>
               </div>
               <h4 className="text-lg text-green-500 mb-2">Colorado State University</h4>
-              <p className="text-md mb-4">Focused on software engineering and HPC areas.</p>
+              <p className="text-md mb-4">Focused on software engineering and computing systems, with an emphasis on building efficient, scalable, and reliable software.
+              </p>
               <ul className="list-disc pl-5 text-left">
                 <li>Relevant coursework: Data Structures, Algorithms, Operating Systems, Machine Learning</li>
               </ul>
             </div>
             {/* Education 2 (Example - you can duplicate and modify for more entries) */}
-              <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
+            <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
               <div className="absolute top-0 left-0 -mt-4 -ml-4 w-16 h-15 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xl font-bold">MS</div>
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold mb-2">Data Science</h3>
+                <h3 className="text-xl text-teal-200 font-semibold mb-2">Computer Science</h3>
                 <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">2025 - 2027 (Expected)</div>
               </div>
-              <h4 className="text-lg text-green-500 mb-2">University of Example</h4>
-              <p className="text-md mb-4">Exploring advanced analytics and machine learning techniques.</p>
+              <h4 className="text-lg text-green-500 mb-2">Graduate Program TBD</h4>
+              <p className="text-md mb-4">Planning to specialize in high-performance and scientific computing, with potential research interests in quantum computing.</p>
               <ul className="list-disc pl-5 text-left">
-                <li>Relevant coursework: Statistical Modeling, Big Data, Deep Learning</li>
+                <li>Intended focus: Parallel computing, HPC systems, scientific computing</li>
               </ul>
             </div>
           </div>
         </motion.section>
 
 {/* Supercomputing Experience */}
+{/* TODO: fix images overlapping and being ugly when shrinking the screen size */}
       <motion.section
         ref={supercomputingRef}
         id="supercomputing"
@@ -496,7 +498,7 @@ export default function PersonalWebsite() {
             <p>&copy; 2025 Anderson Borch | All rights reserved</p>
             <div className="flex justify-center space-x-6 mt-4">
               <a href="https://github.com/Andy-Borch" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300">GitHub</a>
-              <a href="https://orcid.org/yourorcidid" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300">ORCID</a>
+              <a href="https://orcid.org/0009-0009-6045-9239" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300">ORCID</a>
               <a href="https://www.linkedin.com/in/andy-borch" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300">LinkedIn</a>
             </div>
             <p className="mt-4 text-sm text-gray-400">Last updated: May 2025</p>
