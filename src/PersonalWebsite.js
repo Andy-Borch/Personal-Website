@@ -445,7 +445,48 @@ export default function PersonalWebsite() {
         </div>
       </motion.section>
 
+{/* Certifications Section */}
+<motion.section
+  ref={certificationsRef}
+  id="certifications"
+  style={{ scale: certificationsScale }}
+  className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
+>
+  <div className="container mx-auto">
+    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Certifications</h2>
+    <div className="flex flex-col gap-8">
 
+    <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center" style={{ minHeight: '15rem' }}>
+      <img
+        src="/ORNL-Cert.jpg"
+        alt="Hands-on HPC Certification"
+        className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-48"
+        style={{ transformOrigin: '100% 0' }}
+      />
+      <div className="text-center md:text-left md:ml-6 flex-1">
+        <h3 className="text-xl font-semibold text-teal-200 mb-2">Hands-on With HPC</h3>
+        <p className="text-gray-300 mb-2">Demonstrates introduction to HPC tools like Slurm, MPI, OpenMP, and more.</p>
+        <p className="text-sm text-gray-400">Issued: October 2024</p>
+      </div>
+    </div>
+
+
+      <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center self-end justify-end" style={{ minHeight: '15rem' }}>
+        <div className="text-center md:text-right md:mr-6 flex-1">
+          <h3 className="text-xl font-semibold text-teal-200 mb-2">Scientific Computing Masterclass</h3>
+          <p className="text-gray-300 mb-2">Demonstrates Knowledge of CUDA, HIP, MPI, OpenMP, and more.</p>
+          <p className="text-sm text-gray-400">Issued: December 2024</p>
+        </div>
+        <img
+          src="/Udemy_Cert.jpg"
+          alt="Udemy Certification"
+          className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-60 md:ml-6"
+          style={{ transformOrigin: '100% 0' }}
+        />
+      </div>
+    </div>
+  </div>
+</motion.section>
 
 {/* Hobbies Section */}
 <motion.section
