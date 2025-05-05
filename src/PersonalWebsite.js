@@ -208,14 +208,19 @@ export default function PersonalWebsite() {
             <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col">
                 {/* ... existing project 1 content ... */}
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
-                      <img src="https://via.placeholder.com/640x360" alt="Project 1 Placeholder" className="object-cover w-full h-full" />
+                  <img
+                    src="/ML-plot.png"
+                    alt="Hands-on HPC Certification"
+                    className="w-full h-full object-cover shadow-md transform transition-all duration-500 ease-in-out hover:scale-105"
+                    style={{ transformOrigin: '100% 0' }}
+                  />
                   </div>
                   <h3 className="text-xl text-teal-200 font-semibold mb-2">Fastest Algorithm Prediction</h3>
                   <p className="text-md mb-4">A machine learning program that predicts the fastest sorting algorithm based on certain features.</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                       <span className="bg-purple-100 text-purple-800 text-md font-medium px-2.5 py-0.5 rounded">Python</span>
                       <span className="bg-purple-100 text-purple-800 text-md font-medium px-2.5 py-0.5 rounded">Numpy</span>
-                      <span className="bg-purple-100 text-purple-800 text-md font-medium px-2.5 py-0.5 rounded">Data Generation/Manipulation</span>
+                      <span className="bg-purple-100 text-purple-800 text-md font-medium px-2.5 py-0.5 rounded">ML Models</span>
                   </div>
                   <a href="https://github.com/Andy-Borch/Fastest-Algorithm-Predictor" target="_blank" rel="noopener noreferrer" className="text-indigo-300 hover:text-teal-400 transition-colors duration-300">View Code</a>
             </div>
@@ -350,100 +355,110 @@ export default function PersonalWebsite() {
         </motion.section>
 
 {/* Supercomputing Experience */}
-{/* TODO: fix images overlapping and being ugly when shrinking the screen size */}
-      <motion.section
-        ref={supercomputingRef}
-        id="supercomputing"
-        style={{ scale: supercomputingScale }}
-        className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl relative" // Added relative class
-      >
-        <div className="container mx-auto flex flex-col items-center gap-12">
-          <h2 className="text-3xl font-semibold text-gray-300 underline text-center mb-4">
-            My Experiences at Supercomputing
-          </h2>
+<motion.section
+  ref={supercomputingRef}
+  id="supercomputing"
+  style={{ scale: supercomputingScale }}
+  className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl relative"
+>
+  <div className="container mx-auto flex flex-col items-center gap-12">
+    <h2 className="text-3xl font-semibold text-gray-300 underline text-center mb-8">
+      My Experiences at Supercomputing
+    </h2>
 
-          {/* SC23 Logo - Top Left */}
-      <div className="absolute top-4 left-4 z-10">
+    {/* Top Section - Logos and Initial Images */}
+    <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-12 w-full mb-12">
+      {/* SC23 Logo - Top Left (Moves to top row on small screens) */}
+      <div className="relative w-68 h-auto max-w-[250px] md:absolute md:top-6 md:left-6 md:z-10">
         <img
           src="/sc23.png"
           alt="SC23 Conference Logo"
-          className="object-cover w-1/4 h-1/4 rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+          className="object-contain w-full h-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
       </div>
 
-      {/* SC24 Logo - Top Right */}
-      <div className="absolute top-4 right-4 z-10">
+      {/* SC24 Logo - Top Right (Moves to top row on small screens) */}
+      <div className="relative w-68 h-auto max-w-[250px] md:absolute md:top-6 md:right-6 md:z-10">
         <img
           src="/sc-24.jpg"
           alt="SC24 Conference Logo"
-          className="object-cover w-34 h-34 rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+          className="object-contain w-full h-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
       </div>
 
-
-          {/* Top Row Images */}
-          <div className="flex flex-wrap justify-center gap-12">
-            <div className="flex flex-col items-center max-w-xs">
-              <img
-                src="/NVIDIA-gpu.jpg"
-                alt="NVIDIA GPU"
-                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-              />
-              <p className="mt-3 text-sm text-gray-400 italic text-center">NVIDIA H100 GPU</p>
-            </div>
-            <div className="flex flex-col items-center max-w-xs">
-              <img
-                src="/Quantinuum.jpg"
-                alt="Quantinuum"
-                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-              />
-              <p className="mt-3 text-sm text-gray-400 italic text-center">Quantinuum's H2 Quantum Computer</p>
-            </div>
-          </div>
-
-          {/* Middle Row with Side Images and Text Box */}
-          <div className="flex flex-wrap justify-center items-center gap-20">
-            <div className="flex flex-col items-center max-w-xs hidden md:block">
-              <img
-                src="/IBM-quantum.jpg"
-                alt="IBM Quantum"
-                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-              />
-              <p className="mt-3 text-sm text-gray-400 italic text-center">IBM's Quantum Computers</p>
-            </div>
-
-            <div className="rounded-lg shadow-xl p-10 bg-slate-800 max-w-xl">
-              <p className="text-xl mb-6">
-                I've attended two supercomputing conferences, SC23 and SC24, where I completed workshops, tutorials, and hands-on sessions. I learned about the latest advancements in high-performance computing, parallel programming, and data analysis techniques. These are some pictures of cool stuff I found while there.
-              </p>
-              <p className="text-md text-gray-400 mb-2">
-                Topics Covered In Workshops: Slurm, MPI, OpenMP, CUDA, and more.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center max-w-xs hidden md:block">
-              <img
-                src="/F1.jpg"
-                alt="Formula 1"
-                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-              />
-              <p className="mt-3 text-sm text-gray-400 italic text-center">Aston Martin Formula 1 Car</p>
-            </div>
-          </div>
-
-          {/* Bottom Image */}
-          <div className="flex justify-center mt-4">
-            <div className="flex flex-col items-center max-w-xs">
-              <img
-                src="/Immersion.jpg"
-                alt="Immersion Cooling"
-                className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
-              />
-              <p className="mt-3 text-sm text-gray-400 italic text-center">Immersion Cooled System</p>
-            </div>
-          </div>
+      {/* Initial Top Row Images */}
+      <div className="flex flex-wrap justify-center gap-6 mt-6 md:mt-0">
+        <div className="flex flex-col items-center max-w-xs">
+          <img
+            src="/NVIDIA-gpu.jpg"
+            alt="NVIDIA GPU"
+            className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+          />
+          <p className="mt-2 text-md text-gray-400 italic text-center">NVIDIA H100 GPU</p>
         </div>
-      </motion.section>
+        <div className="flex flex-col items-center max-w-xs">
+          <img
+            src="/Quantinuum.jpg"
+            alt="Quantinuum"
+            className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+          />
+          <p className="mt-2 text-md text-gray-400 italic text-center">Quantinuum H2 Quantum Computer</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Middle Section - Text and Side Images */}
+    <div className="flex flex-wrap justify-center items-center gap-16 md:gap-20 w-full">
+      <div className="flex flex-col items-center max-w-xs hidden md:block">
+        <img
+          src="/IBM-quantum.jpg"
+          alt="IBM Quantum"
+          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+        />
+        <p className="mt-3 text-md text-gray-400 italic text-center">IBM Quantum System</p>
+      </div>
+
+      <div className="rounded-lg shadow-xl p-8 bg-slate-800 max-w-lg">
+        <p className="text-lg mb-4">
+          Attending SC23 and SC24 was an enriching experience. The workshops and tutorials provided hands-on learning in cutting-edge HPC technologies. It was fascinating to see the hardware and software innovations driving the future of computing.
+        </p>
+        <p className="text-md text-teal-200 font-semibold mb-2">
+          Key Workshop Topics:
+        </p>
+        <ul className="list-disc list-inside text-gray-300 text-sm">
+          <li>Parallel Programming with MPI and OpenMP</li>
+          <li>GPU Computing with CUDA and HIP</li>
+          <li>Job Scheduling with Slurm</li>
+          <li>High-Performance Data Analytics</li>
+        </ul>
+        <p className="text-sm text-gray-400 mt-4">
+          Exploring the exhibition floor and seeing the latest from companies like NVIDIA, Quantinuum, and IBM was inspiring.
+        </p>
+      </div>
+
+      <div className="flex flex-col items-center max-w-xs hidden md:block">
+        <img
+          src="/F1.jpg"
+          alt="Formula 1"
+          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+        />
+        <p className="mt-3 text-md text-gray-400 italic text-center">Aston Martin Formula One Car</p>
+      </div>
+    </div>
+
+    {/* Bottom Section - Single Image */}
+    <div className="flex justify-center mt-12 w-full">
+      <div className="flex flex-col items-center max-w-md">
+        <img
+          src="/Immersion.jpg"
+          alt="Immersion Cooling"
+          className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
+        />
+        <p className="mt-3 text-md text-gray-400 italic text-center">Immersion Cooling System</p>
+      </div>
+    </div>
+  </div>
+</motion.section>
 
 {/* Certifications Section */}
 <motion.section
