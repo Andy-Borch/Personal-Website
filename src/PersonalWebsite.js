@@ -159,7 +159,7 @@ export default function PersonalWebsite() {
              {/* Image/Icon Section */}
               <div className="flex justify-center">
               <img
-                src="/Profile-Pic.png"
+                src={`${process.env.PUBLIC_URL}/Profile-pic.png`}
                 alt="Profile"
                 className="w-1/2 h-1/2 rounded-full shadow-md border-4 border-blue-500 hover:scale-105 transition-transform"
               />
@@ -208,7 +208,7 @@ export default function PersonalWebsite() {
                 {/* ... existing project 1 content ... */}
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
                   <img
-                    src="/ML-plot.png"
+                    src={`${process.env.PUBLIC_URL}/ML-plot.png`}
                     alt="Hands-on HPC Certification"
                     className="w-full h-full object-cover shadow-md transform transition-all duration-500 ease-in-out hover:scale-105"
                     style={{ transformOrigin: '100% 0' }}
@@ -227,7 +227,7 @@ export default function PersonalWebsite() {
             <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col">
                 {/* ... existing project 2 content ... */}
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
-                      <img src="/Pearson-correlation.png" alt="Project 2 Placeholder" className="object-cover w-full h-full" />
+                      <img src={`${process.env.PUBLIC_URL}/Pearson-correlation.png`} alt="Project 2 Placeholder" className="object-cover w-full h-full" />
                   </div>
                   <h3 className="text-xl text-teal-200 font-semibold mb-2">Image Proccesor</h3>
                   <p className="text-md mb-4">An image processing application designed to validate file formats and provide features like checksum creation, image format conversion, and correlation analysis between images.</p>
@@ -370,7 +370,7 @@ export default function PersonalWebsite() {
       {/* SC23 Logo - Top Left (Moves to top row on small screens) */}
       <div className="relative w-68 h-auto max-w-[250px] md:absolute md:top-6 md:left-6 md:z-10">
         <img
-          src="/sc23.png"
+          src={`${process.env.PUBLIC_URL}/sc23.png`}
           alt="SC23 Conference Logo"
           className="object-contain w-full h-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
@@ -379,7 +379,7 @@ export default function PersonalWebsite() {
       {/* SC24 Logo - Top Right (Moves to top row on small screens) */}
       <div className="relative w-68 h-auto max-w-[250px] md:absolute md:top-6 md:right-6 md:z-10">
         <img
-          src="/sc-24.jpg"
+          src={`${process.env.PUBLIC_URL}/sc-24.jpg`}
           alt="SC24 Conference Logo"
           className="object-contain w-full h-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
@@ -389,7 +389,7 @@ export default function PersonalWebsite() {
       <div className="flex flex-wrap justify-center gap-6 mt-6 md:mt-0">
         <div className="flex flex-col items-center max-w-xs">
           <img
-            src="/NVIDIA-gpu.jpg"
+            src={`${process.env.PUBLIC_URL}/NVIDIA-gpu.jpg`}
             alt="NVIDIA GPU"
             className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
           />
@@ -397,7 +397,7 @@ export default function PersonalWebsite() {
         </div>
         <div className="flex flex-col items-center max-w-xs">
           <img
-            src="/Quantinuum.jpg"
+            src={`${process.env.PUBLIC_URL}/Quantinuum.jpg`}
             alt="Quantinuum"
             className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
           />
@@ -410,7 +410,7 @@ export default function PersonalWebsite() {
     <div className="flex flex-wrap justify-center items-center gap-16 md:gap-20 w-full">
       <div className="flex flex-col items-center max-w-xs hidden md:block">
         <img
-          src="/IBM-quantum.jpg"
+          src={`${process.env.PUBLIC_URL}/IBM-quantum.jpg`}
           alt="IBM Quantum"
           className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
@@ -437,7 +437,7 @@ export default function PersonalWebsite() {
 
       <div className="flex flex-col items-center max-w-xs hidden md:block">
         <img
-          src="/F1.jpg"
+          src={`${process.env.PUBLIC_URL}/F1.jpg`}
           alt="Formula 1"
           className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
@@ -449,7 +449,7 @@ export default function PersonalWebsite() {
     <div className="flex justify-center mt-12 w-full">
       <div className="flex flex-col items-center max-w-md">
         <img
-          src="/Immersion.jpg"
+          src={`${process.env.PUBLIC_URL}/Immersion.jpg`}
           alt="Immersion Cooling"
           className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
@@ -472,7 +472,7 @@ export default function PersonalWebsite() {
 
     <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center" style={{ minHeight: '15rem' }}>
       <img
-        src="/ORNL-Cert.jpg"
+        src={`${process.env.PUBLIC_URL}/ORNL-cert.jpg`}
         alt="Hands-on HPC Certification"
         className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-48"
         style={{ transformOrigin: '100% 0' }}
@@ -492,7 +492,7 @@ export default function PersonalWebsite() {
           <p className="text-sm text-gray-400">Issued: December 2024</p>
         </div>
         <img
-          src="/Udemy_Cert.jpg"
+          src={`${process.env.PUBLIC_URL}/Udemy_cert.jpg`}
           alt="Udemy Certification"
           className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-60 md:ml-6"
           style={{ transformOrigin: '100% 0' }}
@@ -515,7 +515,7 @@ export default function PersonalWebsite() {
       {/* First Image */}
       <div className="relative col-span-1 row-span-1">
         <img
-          src="/Hobbies1.jpg"
+          src={`${process.env.PUBLIC_URL}/Hobbies1.jpg`}
           alt="Hobby 1"
           className="w-full h-full object-cover rounded-lg shadow-md border-4 border-gray-500 hover:scale-105 transition-transform duration-300"
         />
@@ -523,7 +523,7 @@ export default function PersonalWebsite() {
       {/* Second Image */}
       <div className="relative col-span-1 row-span-1">
         <img
-          src="/Hobbies5.jpg"
+          src={`${process.env.PUBLIC_URL}/Hobbies5.jpg`}
           alt="Hobby 2"
           className="w-full h-full object-cover rounded-lg shadow-md border-4 border-gray-500 hover:scale-105 transition-transform duration-300"
         />
@@ -531,7 +531,7 @@ export default function PersonalWebsite() {
       {/* Third Image */}
       <div className="relative col-span-1 row-span-1">
         <img
-          src="/Hobbies3.jpg"
+          src={`${process.env.PUBLIC_URL}/Hobbies3.jpg`}
           alt="Hobby 3"
           className="w-full h-full object-cover rounded-lg shadow-md border-4 border-gray-500 hover:scale-105 transition-transform duration-300"
         />
@@ -539,7 +539,7 @@ export default function PersonalWebsite() {
       {/* Fourth Image */}
       <div className="relative col-span-1 row-span-1">
         <img
-          src="/Hobbies4.jpg"
+          src={`${process.env.PUBLIC_URL}/Hobbies4.jpg`}
           alt="Hobby 4"
           className="w-full h-full object-cover rounded-lg shadow-md border-4 border-gray-500 hover:scale-105 transition-transform duration-300"
         />
