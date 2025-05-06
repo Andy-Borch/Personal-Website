@@ -216,7 +216,7 @@ export default function PersonalWebsite() {
                   />
                   </div>
                   <h3 className="text-xl text-teal-200 font-semibold mb-2">Fastest Algorithm Prediction</h3>
-                  <p className="text-md mb-4">A machine learning program that predicts the fastest sorting algorithm based on certain features.</p>
+                  <p className="text-md mb-4">This project uses machine learning to determine the quickest way to sort data based on various characteristics.</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                       <span className="bg-purple-100 text-purple-800 text-md font-medium px-2.5 py-0.5 rounded">Python</span>
                       <span className="bg-purple-100 text-purple-800 text-md font-medium px-2.5 py-0.5 rounded">Numpy</span>
@@ -228,10 +228,10 @@ export default function PersonalWebsite() {
             <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col">
                 {/* ... existing project 2 content ... */}
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
-                      <img src="https://via.placeholder.com/640x360/4A5568" alt="Project 2 Placeholder" className="object-cover w-full h-full" />
+                      <img src="/Pearson-correlation.png" alt="Project 2 Placeholder" className="object-cover w-full h-full" />
                   </div>
                   <h3 className="text-xl text-teal-200 font-semibold mb-2">Image Proccesor</h3>
-                  <p className="text-md mb-4">Application that validates input image file formats and creates checksums, conversions, and correlation scores.</p>
+                  <p className="text-md mb-4">An image processing application designed to validate file formats and provide features like checksum creation, image format conversion, and correlation analysis between images.</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                       <span className="bg-green-100 text-green-800 text-md font-medium px-2.5 py-0.5 rounded">C++</span>
                       <span className="bg-green-100 text-green-800 text-md font-medium px-2.5 py-0.5 rounded">Valgrind</span>
