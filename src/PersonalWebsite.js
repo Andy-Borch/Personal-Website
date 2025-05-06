@@ -120,7 +120,6 @@ export default function PersonalWebsite() {
         {/* --- Apply ref and style={{ scale }} to each section --- */}
 
         {/* Home Section */}
-        {/* TODO: fix images overlapping and being ugly when shrinking the screen size */}
         <motion.section
           ref={homeRef}
           id="home"
@@ -136,7 +135,11 @@ export default function PersonalWebsite() {
             </div>
             {/* Image/Icon Section */}
             <div className="flex flex-col items-center">
-            <img src={`${process.env.PUBLIC_URL}/Frontier-crop.JPG`} alt="My Image" />
+              <img
+                src={`${process.env.PUBLIC_URL}/Frontier-crop.JPG`}
+                alt="Profile"
+                className="w-45 h-45 rounded-lg shadow-md border-4 border-blue-500 hover:scale-105 transition-transform"
+              />
               <p className="mt-2 text-sm text-gray-400 italic text-center">
                 1 of 74 Racks of the Frontier Supercomputer at SC25
               </p>
