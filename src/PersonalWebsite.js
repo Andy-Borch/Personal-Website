@@ -1,10 +1,12 @@
 import React, { createContext, useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from './card';
-import { ExternalLink, Menu } from 'lucide-react';
+import { ExternalLink, Menu, Linkedin, Github } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
 const SectionContext = createContext();
+
+const roles = ["Engineer", "Coder", "Creator"];
 
 export default function PersonalWebsite() {
   const [sections] = useState([
@@ -13,15 +15,17 @@ export default function PersonalWebsite() {
   ]);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef();
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
   const toggleMenu = () => setMenuOpen(prev => !prev);
 
-  const handleLinkClick = (e, targetId) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(() => setMenuOpen(false), 600);
+  const closeMenu = () => {
+    if (navRef.current) {
+      navRef.current.classList.remove('animate-down');
+      navRef.current.classList.add('animate-up');
+      setTimeout(() => setMenuOpen(false), 300);
+    } else {
+      setMenuOpen(false);
     }
   };
 
@@ -59,6 +63,32 @@ export default function PersonalWebsite() {
     { name: "Merge", time: 10 },
   ];
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentRoleIndex(prevIndex => (prevIndex + 1) % roles.length);
+    }, 2000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+
+  useEffect(() => {
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach((link) => {
+      const clickHandler = (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          closeMenu();
+        }
+      };
+      link.addEventListener('click', clickHandler);
+      return () => link.removeEventListener('click', clickHandler);
+    });
+  }, []);
+
   const navLinks = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
@@ -75,10 +105,30 @@ export default function PersonalWebsite() {
       <div className="bg-gray-600 text-gray-900 scroll-smooth">
         <header className="fixed w-full bg-slate-900 shadow-md z-10 top-0 left-0 transition-all duration-300">
           <nav className="flex justify-between items-center p-4 max-w-5xl mx-auto relative" ref={navRef}>
-            <h1 className="text-2xl font-bold text-teal-200 hover:text-teal-400 transition-colors duration-300">Andy Borch</h1>
-            <button onClick={toggleMenu} aria-label="Toggle Menu">
-              <Menu className="text-teal-200" />
-            </button>
+            <div className="flex flex-col">
+              <h1 className="text-2xl font-bold text-teal-200 hover:text-teal-400 transition-colors duration-300">Andy Borch</h1>
+              <motion.p
+                key={currentRoleIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="text-sm text-gray-400"
+              >
+                {roles[currentRoleIndex]}
+              </motion.p>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <Linkedin className="text-teal-200 hover:text-teal-400 transition-colors duration-300 w-6 h-6" />
+              </a>
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <Github className="text-teal-200 hover:text-teal-400 transition-colors duration-300 w-6 h-6" />
+              </a>
+              <button onClick={toggleMenu} aria-label="Toggle Menu">
+                <Menu className="text-teal-200" />
+              </button>
+            </div>
             <AnimatePresence>
               {menuOpen && (
                 <motion.ul
@@ -92,7 +142,6 @@ export default function PersonalWebsite() {
                     <li key={id} className="border-b border-slate-700 py-2 px-4">
                       <a
                         href={`#${id}`}
-                        onClick={(e) => handleLinkClick(e, id)}
                         className="block text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative"
                       >
                         {label}
