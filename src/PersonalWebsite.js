@@ -1,27 +1,30 @@
-import React, { createContext, useState, useEffect, useRef } from 'react'; // Import useRef
-import { Card, CardContent } from './card'; // Ensure the 'card' component is imported correctly
-import { ExternalLink } from 'lucide-react';
-// Import necessary hooks from framer-motion
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { createContext, useState, useEffect, useRef } from 'react';
+import { Card, CardContent } from './card';
+import { ExternalLink, Menu } from 'lucide-react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
-// Create a context for sections (used in the app)
 const SectionContext = createContext();
 
 export default function PersonalWebsite() {
   const [sections] = useState([
-    'home',
-    'about',
-    'education',
-    'experience',
-    'projects',
-    'hobbies',
-    'certifications',
-    'supercomputing',
+    'home', 'about', 'education', 'experience', 'projects',
+    'hobbies', 'certifications', 'supercomputing',
   ]);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef();
 
+  const toggleMenu = () => setMenuOpen(prev => !prev);
 
-  // --- Refs for each section ---
+  const handleLinkClick = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => setMenuOpen(false), 600);
+    }
+  };
+
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
@@ -31,26 +34,15 @@ export default function PersonalWebsite() {
   const supercomputingRef = useRef(null);
   const certificationsRef = useRef(null);
 
-  // --- Scroll and Transform logic for EACH section ---
-
-  // Helper function to create scroll/transform logic
   const useSectionScale = (ref) => {
     const { scrollYProgress } = useScroll({
       target: ref,
-      // Offset determines when the animation starts and ends relative to the viewport.
-      // "start end": Animation starts when the top of the target hits the bottom of the viewport.
-      // "end start": Animation ends when the bottom of the target hits the top of the viewport.
       offset: ["start end", "end start"]
     });
-
-    // Map scrollYProgress (0 to 1) to scale (0.9 -> 1 -> 0.9)
-    // It scales up to 1 when the center of the section is in the center of the viewport (scrollYProgress = 0.5)
     const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
-
     return { scale };
   };
 
-  // Apply the hook to each section
   const { scale: homeScale } = useSectionScale(homeRef);
   const { scale: aboutScale } = useSectionScale(aboutRef);
   const { scale: experienceScale } = useSectionScale(experienceRef);
@@ -60,7 +52,6 @@ export default function PersonalWebsite() {
   const { scale: supercomputingScale } = useSectionScale(supercomputingRef);
   const { scale: certificationsScale } = useSectionScale(certificationsRef);
 
-
   const projectData = [
     { name: "Bubble", time: 35 },
     { name: "Quick", time: 8 },
@@ -68,54 +59,54 @@ export default function PersonalWebsite() {
     { name: "Merge", time: 10 },
   ];
 
-  // Smooth scroll to sections when a link is clicked (Keep this)
-  useEffect(() => {
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach((link) => {
-      const clickHandler = (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) { // Check if element exists
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            });
-        }
-      };
-      link.addEventListener('click', clickHandler);
-
-      // Cleanup function to remove the specific handler
-      return () => {
-        link.removeEventListener('click', clickHandler);
-      };
-    });
-
-    // No dependencies needed if querySelectorAll is run once on mount
-  }, []); // Empty dependency array ensures this runs only once
+  const navLinks = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'education', label: 'Education' },
+    { id: 'supercomputing', label: 'Supercomputing' },
+    { id: 'certifications', label: 'Certifications' },
+    { id: 'hobbies', label: 'Hobbies' },
+  ];
 
   return (
     <SectionContext.Provider value={sections}>
-      {/* Ensure scroll-smooth is present for the anchor link scrolling */}
       <div className="bg-gray-600 text-gray-900 scroll-smooth">
-        {/* Header Section with navigation links (Keep as is) */}
         <header className="fixed w-full bg-slate-900 shadow-md z-10 top-0 left-0 transition-all duration-300">
-          <nav className="flex justify-between items-center p-4 max-w-5xl mx-auto">
+          <nav className="flex justify-between items-center p-4 max-w-5xl mx-auto relative" ref={navRef}>
             <h1 className="text-2xl font-bold text-teal-200 hover:text-teal-400 transition-colors duration-300">Andy Borch</h1>
-            <ul className="flex space-x-6">
-               {/* Navigation Links - No change needed here */}
-                <li><a href="#home" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Home<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
-                <li><a href="#about" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">About<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
-                <li><a href="#projects" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Projects<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
-                <li><a href="#experience" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Experience<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
-                <li><a href="#education" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Education<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
-                <li><a href="#supercomputing" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Supercomputing<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
-                <li><a href="#certifications" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Certifications<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
-                <li><a href="#hobbies" className="text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative">Hobbies<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span></a></li>
-            </ul>
+            <button onClick={toggleMenu} aria-label="Toggle Menu">
+              <Menu className="text-teal-200" />
+            </button>
+            <AnimatePresence>
+              {menuOpen && (
+                <motion.ul
+                  initial={{ height: 0, opacity: 0, y: -20 }}
+                  animate={{ height: 'auto', opacity: 1, y: 0 }}
+                  exit={{ height: 0, opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute top-full left-0 w-full bg-slate-900 overflow-hidden"
+                >
+                  {navLinks.map(({ id, label }) => (
+                    <li key={id} className="border-b border-slate-700 py-2 px-4">
+                      <a
+                        href={`#${id}`}
+                        onClick={(e) => handleLinkClick(e, id)}
+                        className="block text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative"
+                      >
+                        {label}
+                        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span>
+                      </a>
+                    </li>
+                  ))}
+                </motion.ul>
+              )}
+            </AnimatePresence>
           </nav>
         </header>
+
+
 
         {/* --- Apply ref and style={{ scale }} to each section --- */}
 
@@ -159,7 +150,7 @@ export default function PersonalWebsite() {
              {/* Image/Icon Section */}
               <div className="flex justify-center">
               <img
-                src={`${process.env.PUBLIC_URL}/Profile-pic.png`}
+                src={`${process.env.PUBLIC_URL}/Profile-Pic.png`}
                 alt="Profile"
                 className="w-1/2 h-1/2 rounded-full shadow-md border-4 border-blue-500 hover:scale-105 transition-transform"
               />
@@ -472,7 +463,7 @@ export default function PersonalWebsite() {
 
     <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center" style={{ minHeight: '15rem' }}>
       <img
-        src={`${process.env.PUBLIC_URL}/ORNL-cert.jpg`}
+        src={`${process.env.PUBLIC_URL}/ORNL-Cert.jpg`}
         alt="Hands-on HPC Certification"
         className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-48"
         style={{ transformOrigin: '100% 0' }}
@@ -492,7 +483,7 @@ export default function PersonalWebsite() {
           <p className="text-sm text-gray-400">Issued: December 2024</p>
         </div>
         <img
-          src={`${process.env.PUBLIC_URL}/Udemy_cert.jpg`}
+          src={`${process.env.PUBLIC_URL}/Udemy_Cert.jpg`}
           alt="Udemy Certification"
           className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-60 md:ml-6"
           style={{ transformOrigin: '100% 0' }}
