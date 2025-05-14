@@ -167,7 +167,7 @@ export default function PersonalWebsite() {
           ref={homeRef}
           id="home"
           style={{ scale: homeScale }} // Apply dynamic scale
-          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-100 origin-center rounded-xl" // Added origin-center
+          className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-100 origin-center rounded-xl shadow-2xl" // Added origin-center
           // Removed fadeTransition props
         >
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -177,7 +177,7 @@ export default function PersonalWebsite() {
               <p className="text-2xl text-gray-300 mb-6">High Performance Computing | Scientific Computing | Quantum Computing</p>
             </div>
             {/* Image/Icon Section */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center mt-20">
               <img
                 src={`${process.env.PUBLIC_URL}/Frontier-crop.JPG`}
                 alt="Profile"
@@ -195,7 +195,7 @@ export default function PersonalWebsite() {
           ref={aboutRef}
           id="about"
           style={{ scale: aboutScale }} // Apply dynamic scale
-          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl" // Added origin-center
+          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl" // Added origin-center
           // Removed fadeTransition props
         >
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -241,7 +241,7 @@ export default function PersonalWebsite() {
           ref={projectsRef}
           id="projects"
           style={{ scale: projectsScale }} // Apply dynamic scale
-          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl" // Added origin-center
+          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl" // Added origin-center
           // Removed fadeTransition props
         >
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
@@ -303,7 +303,7 @@ export default function PersonalWebsite() {
           ref={experienceRef}
           id="experience"
           style={{ scale: experienceScale }} // Apply dynamic scale
-          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl" // Added origin-center
+          className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl" // Added origin-center
           // Removed fadeTransition props
         >
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -361,7 +361,7 @@ export default function PersonalWebsite() {
           ref={educationRef}
           id="education"
           style={{ scale: educationScale }} // Apply dynamic scale
-          className="min-h-screen flex items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl" // Added origin-center
+          className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl" // Added origin-center
           // Removed fadeTransition props
         >
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -401,7 +401,7 @@ export default function PersonalWebsite() {
   ref={supercomputingRef}
   id="supercomputing"
   style={{ scale: supercomputingScale }}
-  className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl relative"
+  className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl relative my-6 shadow-2xl"
 >
   <div className="container mx-auto flex flex-col items-center gap-12">
     <h2 className="text-3xl font-semibold text-gray-300 underline text-center mb-8">
@@ -507,7 +507,7 @@ export default function PersonalWebsite() {
   ref={certificationsRef}
   id="certifications"
   style={{ scale: certificationsScale }}
-  className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
+  className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl"
 >
   <div className="container mx-auto">
     <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Certifications</h2>
@@ -550,7 +550,7 @@ export default function PersonalWebsite() {
   ref={hobbiesRef}
   id="hobbies"
   style={{ scale: hobbiesScale }}  // Assuming you're using a state for scaling here
-  className="min-h-screen flex flex-col items-center justify-start p-8 bg-slate-700 text-gray-300 origin-center rounded-xl"
+  className="min-h-screen flex flex-col items-center justify-start p-8 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl"
 >
   <div className="container mx-auto">
     <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Hobbies</h2>
