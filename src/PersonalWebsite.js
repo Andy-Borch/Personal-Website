@@ -6,6 +6,8 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts'
 
 const SectionContext = createContext();
 
+//todo: Fix gif cutting off too soon, finish adding content
+
 const roles = ["Student", "Researcher", "Engineer"];
 
 export default function PersonalWebsite() {
@@ -284,7 +286,13 @@ export default function PersonalWebsite() {
             <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col">
                 {/* ... existing project 3 content ... */}
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
-                      <img src="https://via.placeholder.com/640x360/718096" alt="Project 3 Placeholder" className="object-cover w-full h-full" />
+                    <video
+                        src={`${process.env.PUBLIC_URL}/Brews-demo.mp4`} // Replace with the actual path to your MP4 file
+                        autoPlay
+                        loop
+                        muted // Recommended for autoplay in most browsers
+                        className="object-cover w-full h-full"
+                      />
                   </div>
                   <h3 className="text-xl text-teal-200 font-semibold mb-2">Data Visualization Dashboard</h3>
                   <p className="text-md mb-4">A dashboard to display and analyze sample datasets.</p>
