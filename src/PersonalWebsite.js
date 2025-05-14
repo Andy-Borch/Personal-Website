@@ -3,17 +3,18 @@ import { Card, CardContent } from './card';
 import { ExternalLink, Menu, Linkedin, Github } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const SectionContext = createContext();
 
-//todo: Fix gif cutting off too soon, finish adding content
+//todo: Fix gif cutting off too soon
 
 const roles = ["Student", "Researcher", "Engineer"];
 
 export default function PersonalWebsite() {
   const [sections] = useState([
-    'home', 'about', 'education', 'experience', 'projects',
-    'hobbies', 'certifications', 'supercomputing',
+    'home', 'about', 'projects', 'experience', 'education',
+    'certifications', 'supercomputing', 'hobbies',
   ]);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef();
@@ -89,6 +90,24 @@ export default function PersonalWebsite() {
   }
   closeMenu();
 };
+
+function RelevantCoursework({ courses }) {
+  return (
+    <div className="mb-4">
+      <h4 className="text-lg font-semibold text-yellow-300 mb-2">Relevant Coursework</h4>
+      <div className="flex flex-wrap gap-2">
+        {courses.map((course, i) => (
+          <span
+            key={i}
+            className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded"
+          >
+            {course}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 
   const navLinks = [
@@ -255,7 +274,7 @@ export default function PersonalWebsite() {
                   <img
                     src={`${process.env.PUBLIC_URL}/ML-plot.png`}
                     alt="Hands-on HPC Certification"
-                    className="w-full h-full object-cover shadow-md transform transition-all duration-500 ease-in-out hover:scale-105"
+                    className="object-cover w-full h-full"
                     style={{ transformOrigin: '100% 0' }}
                   />
                   </div>
@@ -287,21 +306,21 @@ export default function PersonalWebsite() {
                 {/* ... existing project 3 content ... */}
                   <div className="aspect-w-16 aspect-h-9 mb-4 rounded-md overflow-hidden">
                     <video
-                        src={`${process.env.PUBLIC_URL}/Brews-demo.mp4`} // Replace with the actual path to your MP4 file
+                        src={`${process.env.PUBLIC_URL}/demo-gif.mp4`} // Replace with the actual path to your MP4 file
                         autoPlay
                         loop
                         muted // Recommended for autoplay in most browsers
                         className="object-cover w-full h-full"
                       />
                   </div>
-                  <h3 className="text-xl text-teal-200 font-semibold mb-2">Data Visualization Dashboard</h3>
-                  <p className="text-md mb-4">A dashboard to display and analyze sample datasets.</p>
+                  <h3 className="text-xl text-teal-200 font-semibold mb-2">Trip Planner</h3>
+                  <p className="text-md mb-4">A Java-based program that builds or reads in a trip file and finds the shortest possible route between all points using various traveling salesman problem (TSP) algorithms. The project supported custom constraints and route optimizations, allowing flexible trip planning.</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="bg-yellow-100 text-yellow-800 text-md font-medium px-2.5 py-0.5 rounded">Python</span>
-                      <span className="bg-yellow-100 text-yellow-800 text-md font-medium px-2.5 py-0.5 rounded">Chart.js</span>
-                      <span className="bg-yellow-100 text-yellow-800 text-md font-medium px-2.5 py-0.5 rounded">Flask</span>
+                      <span className="bg-yellow-100 text-yellow-800 text-md font-medium px-2.5 py-0.5 rounded">Java</span>
+                      <span className="bg-yellow-100 text-yellow-800 text-md font-medium px-2.5 py-0.5 rounded">Postman</span>
+                      <span className="bg-yellow-100 text-yellow-800 text-md font-medium px-2.5 py-0.5 rounded">Git</span>
                   </div>
-                  <a href="#" className="text-orange-400 hover:underline mt-auto">Explore Demo</a>
+                  <a href="https://cs314.cooperhlarson.com/" target="_blank" rel="noopener noreferrer" className="text-indigo-300 hover:text-teal-400 transition-colors duration-300">Try Demo</a>
             </div>
           </div>
         </motion.section>
@@ -325,8 +344,8 @@ export default function PersonalWebsite() {
                 </div>
                 <h3 className="text-xl font-lg text-green-500 mb-4">Oak Ridge National Lab</h3>
                 <ul className="text-lg mb-4 list-disc pl-5 text-left">
-                    <li>Great at what I do.</li>
-                    <li>I build innovative solutions.</li>
+                    <li>Investigating HPC job scheduler performance</li>
+                    <li>Modifing exsisting HPC job schedulers to perform better for urgent and interactive workloads</li>
                 </ul>
                 <div className="mb-4">
                     <h4 className="text-lg font-semibold text-yellow-300 mb-2">Technical Skills</h4>
@@ -355,54 +374,102 @@ export default function PersonalWebsite() {
                       <h4 className="text-lg font-semibold text-yellow-300 mb-2">Tools Used</h4>
                       <div className="flex flex-wrap gap-2">
                           <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">NVIDIA Jetson Nano</span>
-                          <span className="bg-blue-200 text-blue-900 text-sm font-medium px-2.5 py-0.5 rounded">Tensorflow</span>
-                          <span className="bg-blue-200 text-blue-900 text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
-                          <span className="bg-blue-200 text-blue-900 text-sm font-medium px-2.5 py-0.5 rounded">Benchmarking Tools</span>
+                          <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">Tensorflow</span>
+                          <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">Python</span>
+                          <span className="bg-blue-200 text-blue-900 text-md font-medium px-2.5 py-0.5 rounded">Benchmarking Tools</span>
                       </div>
                   </div>
               </div>
           </div>
         </motion.section>
 
-        {/* Education Section */}
-        <motion.section
-          ref={educationRef}
-          id="education"
-          style={{ scale: educationScale }} // Apply dynamic scale
-          className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl" // Added origin-center
-          // Removed fadeTransition props
-        >
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">Academic Background</h2>
-            {/* Education 1 */}
-            <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
-              <div className="absolute top-0 left-0 -mt-4 -ml-4 w-16 h-15 rounded-full bg-green-600 flex items-center justify-center text-white text-xl font-bold">BS</div>
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl text-teal-200 font-semibold mb-2">Computer Science</h3>
-                <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">2021-2025</div>
-              </div>
-              <h4 className="text-lg text-green-500 mb-2">Colorado State University</h4>
-              <p className="text-md mb-4">Focused on software engineering and computing systems, with an emphasis on building efficient, scalable, and reliable software.
-              </p>
-              <ul className="list-disc pl-5 text-left">
-                <li>Relevant coursework: Data Structures, Algorithms, Operating Systems, Machine Learning</li>
-              </ul>
-            </div>
-            {/* Education 2 (Example - you can duplicate and modify for more entries) */}
-            <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
-              <div className="absolute top-0 left-0 -mt-4 -ml-4 w-16 h-15 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xl font-bold">MS</div>
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl text-teal-200 font-semibold mb-2">Computer Science</h3>
-                <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">2025 - 2027 (Expected)</div>
-              </div>
-              <h4 className="text-lg text-green-500 mb-2">Graduate Program TBD</h4>
-              <p className="text-md mb-4">Planning to specialize in high-performance and scientific computing, with potential research interests in quantum computing.</p>
-              <ul className="list-disc pl-5 text-left">
-                <li>Intended focus: Parallel computing, HPC systems, scientific computing</li>
-              </ul>
-            </div>
-          </div>
-        </motion.section>
+{/* Education Section */}
+    <motion.section
+      ref={educationRef}
+      id="education"
+      style={{ scale: educationScale }}
+      className="min-h-screen flex items-center justify-center p-10 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl"
+    >
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline col-span-full">Academic Background</h2>
+        
+        <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
+      <div className="absolute top-0 left-0 -mt-4 -ml-4 w-16 h-15 rounded-full bg-green-600 flex items-center justify-center text-white text-xl font-bold">BS</div>
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-xl text-teal-200 font-semibold">Computer Science</h3>
+        <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">2021-2025</div>
+      </div>
+      <h4 className="text-lg text-green-500 mb-2">Colorado State University</h4>
+      <p className="text-lg mb-2">Focused on software engineering and computing systems, with an emphasis on building efficient, scalable, and reliable software.</p>
+      <RelevantCoursework courses={[
+        "Data Structures",
+        "Algorithms",
+        "Operating Systems",
+        "Machine Learning",
+        "Software Engineering",
+        "Computer Networks",
+        "3D Modeling",
+      ]} />
+    </div>
+
+    {/* Education 2 */}
+    <div className="relative rounded-lg shadow-xl p-8 bg-slate-800">
+      <div className="absolute top-0 left-0 -mt-4 -ml-4 w-16 h-15 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xl font-bold">MS</div>
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-xl text-teal-200 font-semibold">Computer Science</h3>
+        <div className="bg-slate-300 text-slate-700 rounded-full px-3 py-1 text-sm font-medium">2025 - 2027 (Expected)</div>
+      </div>
+      <h4 className="text-lg text-green-500 mb-2">Graduate Program TBD</h4>
+      <p className="text-lg mb-2">Planning to specialize in high-performance and scientific computing, with potential research interests in quantum computing.</p>
+      <RelevantCoursework courses={[
+        "Introduction to Research",
+      ]} />
+    </div>
+  </div>
+</motion.section>
+
+{/* Certifications Section */}
+<motion.section
+  ref={certificationsRef}
+  id="certifications"
+  style={{ scale: certificationsScale }}
+  className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl"
+>
+  <div className="container mx-auto">
+    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Certifications</h2>
+    <div className="flex flex-col gap-8">
+
+    <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center" style={{ minHeight: '15rem' }}>
+      <img
+        src={`${process.env.PUBLIC_URL}/ORNL-Cert.jpg`}
+        alt="Hands-on HPC Certification"
+        className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-48"
+        style={{ transformOrigin: '100% 0' }}
+      />
+      <div className="text-center md:text-left md:ml-6 flex-1">
+        <h3 className="text-xl font-semibold text-teal-200 mb-2">Hands-on With HPC</h3>
+        <p className="text-gray-300 mb-2">Demonstrates introduction to HPC tools like Slurm, MPI, OpenMP, and more.</p>
+        <p className="text-sm text-gray-400">Issued: October 2024</p>
+      </div>
+    </div>
+
+
+      <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center self-end justify-end" style={{ minHeight: '15rem' }}>
+        <div className="text-center md:text-right md:mr-6 flex-1">
+          <h3 className="text-xl font-semibold text-teal-200 mb-2">Scientific Computing Masterclass</h3>
+          <p className="text-gray-300 mb-2">Demonstrates Knowledge of CUDA, HIP, MPI, OpenMP, and more.</p>
+          <p className="text-sm text-gray-400">Issued: December 2024</p>
+        </div>
+        <img
+          src={`${process.env.PUBLIC_URL}/Udemy_Cert.jpg`}
+          alt="Udemy Certification"
+          className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-60 md:ml-6"
+          style={{ transformOrigin: '100% 0' }}
+        />
+      </div>
+    </div>
+  </div>
+</motion.section>
 
 {/* Supercomputing Experience */}
 <motion.section
@@ -505,49 +572,6 @@ export default function PersonalWebsite() {
           className="object-cover w-full rounded-md shadow-md border-4 border-gray-500 hover:scale-105 transition-transform"
         />
         <p className="mt-3 text-md text-gray-400 italic text-center">Immersion Cooling System</p>
-      </div>
-    </div>
-  </div>
-</motion.section>
-
-{/* Certifications Section */}
-<motion.section
-  ref={certificationsRef}
-  id="certifications"
-  style={{ scale: certificationsScale }}
-  className="min-h-screen flex flex-col items-center justify-center p-8 bg-slate-700 text-gray-300 origin-center rounded-xl my-6 shadow-2xl"
->
-  <div className="container mx-auto">
-    <h2 className="text-3xl font-semibold text-gray-300 mb-8 text-center underline">Certifications</h2>
-    <div className="flex flex-col gap-8">
-
-    <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center" style={{ minHeight: '15rem' }}>
-      <img
-        src={`${process.env.PUBLIC_URL}/ORNL-Cert.jpg`}
-        alt="Hands-on HPC Certification"
-        className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-48"
-        style={{ transformOrigin: '100% 0' }}
-      />
-      <div className="text-center md:text-left md:ml-6 flex-1">
-        <h3 className="text-xl font-semibold text-teal-200 mb-2">Hands-on With HPC</h3>
-        <p className="text-gray-300 mb-2">Demonstrates introduction to HPC tools like Slurm, MPI, OpenMP, and more.</p>
-        <p className="text-sm text-gray-400">Issued: October 2024</p>
-      </div>
-    </div>
-
-
-      <div className="bg-slate-800 rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center self-end justify-end" style={{ minHeight: '15rem' }}>
-        <div className="text-center md:text-right md:mr-6 flex-1">
-          <h3 className="text-xl font-semibold text-teal-200 mb-2">Scientific Computing Masterclass</h3>
-          <p className="text-gray-300 mb-2">Demonstrates Knowledge of CUDA, HIP, MPI, OpenMP, and more.</p>
-          <p className="text-sm text-gray-400">Issued: December 2024</p>
-        </div>
-        <img
-          src={`${process.env.PUBLIC_URL}/Udemy_Cert.jpg`}
-          alt="Udemy Certification"
-          className="w-32 h-32 object-cover rounded-full shadow-md transform transition-all duration-500 ease-in-out hover:w-60 md:ml-6"
-          style={{ transformOrigin: '100% 0' }}
-        />
       </div>
     </div>
   </div>
