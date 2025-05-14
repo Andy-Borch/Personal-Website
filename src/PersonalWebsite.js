@@ -6,7 +6,7 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts'
 
 const SectionContext = createContext();
 
-const roles = ["Engineer", "Coder", "Creator"];
+const roles = ["Student", "Researcher", "Engineer"];
 
 export default function PersonalWebsite() {
   const [sections] = useState([
@@ -37,6 +37,7 @@ export default function PersonalWebsite() {
   const hobbiesRef = useRef(null);
   const supercomputingRef = useRef(null);
   const certificationsRef = useRef(null);
+  const containerRef = useRef(null);
 
   const useSectionScale = (ref) => {
     const { scrollYProgress } = useScroll({
@@ -72,22 +73,21 @@ export default function PersonalWebsite() {
   }, []);
 
 
-  useEffect(() => {
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach((link) => {
-      const clickHandler = (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          closeMenu();
-        }
-      };
-      link.addEventListener('click', clickHandler);
-      return () => link.removeEventListener('click', clickHandler);
+  const scrollToSection = (id) => {
+  const targetElement = document.getElementById(id);
+  if (targetElement && navRef.current) {
+    const elementTop = targetElement.getBoundingClientRect().top;
+    const headerHeight = navRef.current.offsetHeight;
+
+    // Scroll relative to the current scroll position of the window
+    window.scrollTo({
+      top: window.scrollY + elementTop - headerHeight,
+      behavior: 'smooth',
     });
-  }, []);
+  }
+  closeMenu();
+};
+
 
   const navLinks = [
     { id: 'home', label: 'Home' },
@@ -102,7 +102,7 @@ export default function PersonalWebsite() {
 
   return (
     <SectionContext.Provider value={sections}>
-      <div className="bg-gray-600 text-gray-900 scroll-smooth">
+      <div className="bg-gray-600 text-gray-900 scroll-smooth" ref={containerRef}>
         <header className="fixed w-full bg-slate-900 shadow-md z-10 top-0 left-0 transition-all duration-300">
           <nav className="flex justify-between items-center p-4 max-w-5xl mx-auto relative" ref={navRef}>
             <div className="flex flex-col">
@@ -137,14 +137,19 @@ export default function PersonalWebsite() {
                   exit={{ height: 0, opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                   className="absolute top-full left-0 w-full bg-slate-900 overflow-hidden"
+                  onClick={closeMenu} // Close menu when clicking outside
                 >
-                  {navLinks.map(({ id, label }) => (
-                    <li key={id} className="border-b border-slate-700 py-2 px-4">
+                  {sections.map((section) => (
+                    <li key={section} className="border-b border-slate-700 py-2 px-4">
                       <a
-                        href={`#${id}`}
+                        href={`#${section}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection(section);
+                        }}
                         className="block text-lg text-gray-400 hover:text-teal-400 transition-colors duration-300 relative"
                       >
-                        {label}
+                        {section.charAt(0).toUpperCase() + section.slice(1)} {/* Capitalize the first letter */}
                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-teal-400 transition-all duration-300"></span>
                       </a>
                     </li>
@@ -154,8 +159,6 @@ export default function PersonalWebsite() {
             </AnimatePresence>
           </nav>
         </header>
-
-
 
         {/* --- Apply ref and style={{ scale }} to each section --- */}
 
