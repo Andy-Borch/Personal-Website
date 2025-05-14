@@ -119,10 +119,10 @@ export default function PersonalWebsite() {
               </motion.p>
             </div>
             <div className="flex items-center gap-4">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+              <a href="https://www.linkedin.com/in/andy-borch" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
                 <Linkedin className="text-teal-200 hover:text-teal-400 transition-colors duration-300 w-6 h-6" />
               </a>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+              <a href="https://github.com/Andy-Borch" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
                 <Github className="text-teal-200 hover:text-teal-400 transition-colors duration-300 w-6 h-6" />
               </a>
               <button onClick={toggleMenu} aria-label="Toggle Menu">
@@ -278,7 +278,7 @@ export default function PersonalWebsite() {
                       <span className="bg-green-100 text-green-800 text-md font-medium px-2.5 py-0.5 rounded">C++</span>
                       <span className="bg-green-100 text-green-800 text-md font-medium px-2.5 py-0.5 rounded">Valgrind</span>
                   </div>
-                  <a href="#" className="text-teal-400 hover:underline mt-auto">View Code (ADD LINK HERE)</a>
+                  <a href="https://github.com/Andy-Borch/Image-Processor" target="_blank" rel="noopener noreferrer" className="text-indigo-300 hover:text-teal-400 transition-colors duration-300">View Code</a>
             </div>
             {/* Project 3 */}
             <div className="relative rounded-lg shadow-lg p-6 bg-slate-800 flex flex-col">
